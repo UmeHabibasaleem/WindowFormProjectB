@@ -1,0 +1,9 @@
+c:\users\abubakar\documents\visual studio 2015\Projects\ProjectBLab\ProjectBLab\bin\Debug\ProjectBLab.exe.config
+c:\users\abubakar\documents\visual studio 2015\Projects\ProjectBLab\ProjectBLab\bin\Debug\ProjectBLab.exe
+c:\users\abubakar\documents\visual studio 2015\Projects\ProjectBLab\ProjectBLab\bin\Debug\ProjectBLab.pdb
+c:\users\abubakar\documents\visual studio 2015\Projects\ProjectBLab\ProjectBLab\obj\Debug\ProjectBLab.csprojResolveAssemblyReference.cache
+c:\users\abubakar\documents\visual studio 2015\Projects\ProjectBLab\ProjectBLab\obj\Debug\ProjectBLab.Form1.resources
+c:\users\abubakar\documents\visual studio 2015\Projects\ProjectBLab\ProjectBLab\obj\Debug\ProjectBLab.Properties.Resources.resources
+c:\users\abubakar\documents\visual studio 2015\Projects\ProjectBLab\ProjectBLab\obj\Debug\ProjectBLab.csproj.GenerateResource.Cache
+c:\users\abubakar\documents\visual studio 2015\Projects\ProjectBLab\ProjectBLab\obj\Debug\ProjectBLab.exe
+c:\users\abubakar\documents\visual studio 2015\Projects\ProjectBLab\ProjectBLab\obj\Debug\ProjectBLab.pdb
