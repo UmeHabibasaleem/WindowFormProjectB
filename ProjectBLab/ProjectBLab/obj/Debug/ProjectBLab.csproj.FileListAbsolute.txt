@@ -7,3 +7,13 @@ c:\users\abubakar\documents\visual studio 2015\Projects\ProjectBLab\ProjectBLab\
 c:\users\abubakar\documents\visual studio 2015\Projects\ProjectBLab\ProjectBLab\obj\Debug\ProjectBLab.csproj.GenerateResource.Cache
 c:\users\abubakar\documents\visual studio 2015\Projects\ProjectBLab\ProjectBLab\obj\Debug\ProjectBLab.exe
 c:\users\abubakar\documents\visual studio 2015\Projects\ProjectBLab\ProjectBLab\obj\Debug\ProjectBLab.pdb
+C:\Users\Abubakar\Documents\GitHub\WindowFormProjectB\ProjectBLab\ProjectBLab\bin\Debug\ProjectBLab.exe.config
+C:\Users\Abubakar\Documents\GitHub\WindowFormProjectB\ProjectBLab\ProjectBLab\obj\Debug\ProjectBLab.exe
+C:\Users\Abubakar\Documents\GitHub\WindowFormProjectB\ProjectBLab\ProjectBLab\obj\Debug\ProjectBLab.pdb
+C:\Users\Abubakar\Documents\GitHub\WindowFormProjectB\ProjectBLab\ProjectBLab\obj\Debug\ProjectBLab.csprojResolveAssemblyReference.cache
+C:\Users\Abubakar\Documents\GitHub\WindowFormProjectB\ProjectBLab\ProjectBLab\obj\Debug\ProjectBLab.Clo_Management.resources
+C:\Users\Abubakar\Documents\GitHub\WindowFormProjectB\ProjectBLab\ProjectBLab\obj\Debug\ProjectBLab.Student.resources
+C:\Users\Abubakar\Documents\GitHub\WindowFormProjectB\ProjectBLab\ProjectBLab\obj\Debug\ProjectBLab.Properties.Resources.resources
+C:\Users\Abubakar\Documents\GitHub\WindowFormProjectB\ProjectBLab\ProjectBLab\obj\Debug\ProjectBLab.csproj.GenerateResource.Cache
+C:\Users\Abubakar\Documents\GitHub\WindowFormProjectB\ProjectBLab\ProjectBLab\bin\Debug\ProjectBLab.exe
+C:\Users\Abubakar\Documents\GitHub\WindowFormProjectB\ProjectBLab\ProjectBLab\bin\Debug\ProjectBLab.pdb

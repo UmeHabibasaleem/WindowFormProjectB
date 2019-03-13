@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 
 namespace ProjectBLab
 {
-    public partial class Form1 : Form
+    public partial class Student : Form
     {
         ErrorProvider e1 = new ErrorProvider();
         int globalindex;
@@ -48,7 +48,7 @@ namespace ProjectBLab
             dataGridView1.Update();
             
         }
-        public Form1()
+        public Student()
         {
             InitializeComponent();
         }
@@ -161,21 +161,24 @@ namespace ProjectBLab
 
             StudentClass sc = new StudentClass();
             ListofClasses lt = new ListofClasses();
+            int index = dataGridView1.CurrentCell.RowIndex;
+            DataGridViewRow r = dataGridView1.Rows[index];
+            int id = Convert.ToInt32(r.Cells[0].Value);
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Delete")
             {
-                int index = dataGridView1.CurrentCell.RowIndex;
-                DataGridViewRow r = dataGridView1.Rows[index];
-                int id = Convert.ToInt32(r.Cells[0].Value);
-                sc.Delete(id); 
-                MessageBox.Show("id of the selested row is" + id);
-             
-
+                DialogResult result = MessageBox.Show("Do You Want to delete?" + id, "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (result.Equals(DialogResult.OK))
+                {
+                    sc.Delete(id);
+                    MessageBox.Show("id of the selested row is" + id);
+                }
+                else
+                {
+                    return;
+                }
             }
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Edit")
             {
-                int index = dataGridView1.CurrentCell.RowIndex;
-                DataGridViewRow r = dataGridView1.Rows[index];
-                int id = Convert.ToInt32(r.Cells[0].Value);
                 textBox1.Text = r.Cells[1].Value.ToString();
                 textBox3.Text = r.Cells[2].Value.ToString();
                 textBox5.Text = r.Cells[3].Value.ToString();
@@ -206,6 +209,13 @@ namespace ProjectBLab
                 textBox6.Text = " ";
 
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Clo_Management Clo = new Clo_Management();
+            this.Hide();
+            Clo.Show();
         }
     }
     

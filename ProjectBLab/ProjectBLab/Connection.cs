@@ -94,6 +94,35 @@ namespace ProjectBLab
                 throw (ex);
             }
         }
+        public void Show_CLoRecord(string query)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataReader reader;
+                reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    ListofClasses Lt1 = new ListofClasses();
+
+                    while (reader.Read())
+                    {
+                        CLOClass Clo = new CLOClass();
+                        Clo.Id1 = Convert.ToInt32(reader[0]);
+                        Clo.Name = reader[1].ToString();
+                        Clo.DateCreated =Convert.ToDateTime( reader[2]);
+                        Clo.DateUpdated = Convert.ToDateTime(reader[3]);
+                        Lt1.AddIntoCLoList(Clo);
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
 
     }
 }
