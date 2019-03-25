@@ -217,6 +217,46 @@ namespace ProjectBLab
             this.Hide();
             Clo.Show();
         }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Rubrics rub = new Rubrics();
+            this.Hide();
+            rub.Show();
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RubricLevel rebL = new RubricLevel();
+            this.Hide();
+            rebL.Show();
+        }
+
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Assessment ASS = new Assessment();
+            this.Hide();
+            ASS.Show();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AssessmentComponent ac = new AssessmentComponent();
+            this.Hide();
+            ac.Show();
+        }
+
+        private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            StudentResult SR = new StudentResult();
+            this.Hide();
+            SR.Show();
+        }
     }
     
  }
