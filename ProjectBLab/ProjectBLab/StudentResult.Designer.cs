@@ -43,6 +43,7 @@
             this.assessmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.RubricLSelection = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
             this.StudentName1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.EvaluateDate = new System.Windows.Forms.DateTimePicker();
             this.AssessmentSelection = new System.Windows.Forms.ComboBox();
+            this.AssessmentSel = new System.Windows.Forms.ComboBox();
             this.assessmentTableAdapter = new ProjectBLab.ProjectBDataSet4TableAdapters.AssessmentTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.assessmentComClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -132,6 +134,7 @@
             this.Save.TabIndex = 1;
             this.Save.Text = "Save  ";
             this.Save.UseVisualStyleBackColor = true;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // ADD
             // 
@@ -171,7 +174,7 @@
             // 
             this.RubricLSelection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.RubricLSelection.FormattingEnabled = true;
-            this.RubricLSelection.Location = new System.Drawing.Point(107, 51);
+            this.RubricLSelection.Location = new System.Drawing.Point(107, 34);
             this.RubricLSelection.Name = "RubricLSelection";
             this.RubricLSelection.Size = new System.Drawing.Size(198, 21);
             this.RubricLSelection.TabIndex = 24;
@@ -188,6 +191,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.63496F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.85347F));
+            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.StudentName1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
@@ -196,19 +200,32 @@
             this.tableLayoutPanel2.Controls.Add(this.EvaluateDate, 3, 1);
             this.tableLayoutPanel2.Controls.Add(this.AssessmentSelection, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.RubricLSelection, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.AssessmentSel, 1, 2);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(16, 73);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(778, 83);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(778, 86);
             this.tableLayoutPanel2.TabIndex = 24;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(19, 65);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 16);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Assessment";
             // 
             // StudentName1
             // 
             this.StudentName1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.StudentName1.FormattingEnabled = true;
-            this.StudentName1.Location = new System.Drawing.Point(107, 10);
+            this.StudentName1.Location = new System.Drawing.Point(107, 4);
             this.StudentName1.Name = "StudentName1";
             this.StudentName1.Size = new System.Drawing.Size(198, 21);
             this.StudentName1.TabIndex = 25;
@@ -220,7 +237,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(21, 54);
+            this.label5.Location = new System.Drawing.Point(21, 37);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 16);
             this.label5.TabIndex = 3;
@@ -231,7 +248,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 12);
+            this.label2.Location = new System.Drawing.Point(11, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 16);
             this.label2.TabIndex = 0;
@@ -242,7 +259,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(350, 12);
+            this.label3.Location = new System.Drawing.Point(350, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(110, 16);
             this.label3.TabIndex = 1;
@@ -253,7 +270,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(370, 54);
+            this.label6.Location = new System.Drawing.Point(370, 37);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 16);
             this.label6.TabIndex = 4;
@@ -263,21 +280,33 @@
             // 
             this.EvaluateDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.EvaluateDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.EvaluateDate.Location = new System.Drawing.Point(466, 52);
+            this.EvaluateDate.Location = new System.Drawing.Point(466, 35);
             this.EvaluateDate.Name = "EvaluateDate";
             this.EvaluateDate.Size = new System.Drawing.Size(208, 20);
             this.EvaluateDate.TabIndex = 22;
+            this.EvaluateDate.ValueChanged += new System.EventHandler(this.EvaluateDate_ValueChanged);
             // 
             // AssessmentSelection
             // 
             this.AssessmentSelection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.AssessmentSelection.FormattingEnabled = true;
-            this.AssessmentSelection.Location = new System.Drawing.Point(466, 10);
+            this.AssessmentSelection.Location = new System.Drawing.Point(466, 4);
             this.AssessmentSelection.Name = "AssessmentSelection";
             this.AssessmentSelection.Size = new System.Drawing.Size(208, 21);
             this.AssessmentSelection.TabIndex = 23;
             this.AssessmentSelection.Tag = "";
             this.AssessmentSelection.SelectedIndexChanged += new System.EventHandler(this.AssessmentSelection_SelectedIndexChanged);
+            // 
+            // AssessmentSel
+            // 
+            this.AssessmentSel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.AssessmentSel.FormattingEnabled = true;
+            this.AssessmentSel.Location = new System.Drawing.Point(107, 63);
+            this.AssessmentSel.Name = "AssessmentSel";
+            this.AssessmentSel.Size = new System.Drawing.Size(198, 21);
+            this.AssessmentSel.TabIndex = 27;
+            this.AssessmentSel.Tag = "";
+            this.AssessmentSel.SelectedIndexChanged += new System.EventHandler(this.AssessmentSel_SelectedIndexChanged);
             // 
             // assessmentTableAdapter
             // 
@@ -502,5 +531,7 @@
         private System.Windows.Forms.DataGridViewButtonColumn EditSR;
         private System.Windows.Forms.DataGridViewButtonColumn DeleteSr;
         private System.Windows.Forms.BindingSource studentResultClassBindingSource1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox AssessmentSel;
     }
 }

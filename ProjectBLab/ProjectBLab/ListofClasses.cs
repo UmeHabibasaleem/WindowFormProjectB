@@ -14,10 +14,12 @@ namespace ProjectBLab
         public static List<string> cloname = new List<string>();
         private static List<string> ASSname = new List<string>();
         private static List<string> studentname = new List<string>();
+        private static List<string> Assessment = new List<string>();
         private static List<RubricLevelClass> rLC = new List<RubricLevelClass>();
         private static List<AssessmentClass> ASSC = new List<AssessmentClass>();
         private static List<AssessmentComClass> ASSCom = new List<AssessmentComClass>();
         private static List<StudentResultClass> STR = new List<StudentResultClass>();
+       
         internal List<CLOClass> CLOList
         {
             get
@@ -150,6 +152,19 @@ namespace ProjectBLab
             }
         }
 
+        public  List<string> Assessment1
+        {
+            get
+            {
+                return Assessment;
+            }
+
+            set
+            {
+                Assessment = value;
+            }
+        }
+
         public void addIntolist( StudentClass st)
         {
             studentList.Add(st);
@@ -185,6 +200,10 @@ namespace ProjectBLab
         public void AddIntoCLOnameList(string cl)
         {
             Cloname.Add(cl);
+        }
+        public void AddIntoAssesssment(string cl)
+        {
+            Assessment.Add(cl);
         }
         public void AddRubricLevelList(RubricLevelClass rl)
         {

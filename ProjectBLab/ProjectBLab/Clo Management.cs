@@ -66,6 +66,7 @@ namespace ProjectBLab
                 CloName.Text = " ";
                 DateCreated.ResetText();
                 DateUpdated.ResetText();
+                Clo_Management_Load_1(sender, e);
             }
 
         }
@@ -85,6 +86,7 @@ namespace ProjectBLab
                 CloName.Text = " ";
                 DateCreated.ResetText();
                 DateUpdated.ResetText();
+                Clo_Management_Load_1(sender, e);
             }
         }
 
@@ -101,6 +103,7 @@ namespace ProjectBLab
                 if (result.Equals(DialogResult.OK))
                 {
                     sc.Delete(id);
+                    Clo_Management_Load_1(sender, e);
                     MessageBox.Show("id of the selested row is" + id);
                 }
                 else
@@ -114,6 +117,10 @@ namespace ProjectBLab
                 DateCreated.Value= Convert.ToDateTime(r.Cells[2].Value);
                 DateUpdated.Value = Convert.ToDateTime(r.Cells[3].Value);
                 globalindex2 = id;
+                if(Add.Visible)
+                {
+                    Add.Visible = false;
+                }
             }
         }
 
@@ -122,6 +129,7 @@ namespace ProjectBLab
             CLOClass clo = new CLOClass();
             ListofClasses lt1 = new ListofClasses();
             clo.CloRecord();
+            ClodataGridView.DataSource = null;
             ClodataGridView.DataSource = lt1.CLOList;
         }
     }

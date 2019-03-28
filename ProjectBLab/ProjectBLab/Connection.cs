@@ -36,6 +36,8 @@ namespace ProjectBLab
             catch (Exception ex)
             {
                 throw ex;
+                MessageBox.Show("dubicate data can,t insert in it");
+                return;
             }
             finally
             {
@@ -57,6 +59,8 @@ namespace ProjectBLab
             catch (Exception ex)
             {
                 throw ex;
+                MessageBox.Show("Data can't be deleted,");
+                return;
             }
             finally
             {
@@ -96,7 +100,7 @@ namespace ProjectBLab
                 if (reader.HasRows)
                 {
                     ListofClasses Lt1 = new ListofClasses();
-
+                    Lt1.StudentList.Clear();
                     while (reader.Read())
                     {
                         StudentClass st1 = new StudentClass();
@@ -133,7 +137,7 @@ namespace ProjectBLab
                 if (reader.HasRows)
                 {
                     ListofClasses Lt1 = new ListofClasses();
-
+                    Lt1.CLOList.Clear();
                     while (reader.Read())
                     {
                         CLOClass Clo = new CLOClass();
@@ -351,6 +355,34 @@ namespace ProjectBLab
                 conn.Close();
             }
         }
+        public void TitleForAssesssment(string query)
+        {
+            try
+            {
+                ListofClasses l = new ListofClasses();
+
+                SqlCommand command = new SqlCommand(query, conn);
+                if (conn.State != System.Data.ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+                SqlDataReader reader;
+                reader = command.ExecuteReader();
+                l.Assessment1.Clear();
+                while (reader.Read())
+                {
+                    l.AddIntoAssesssment(reader[0].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
         public void NameForStudentList(string query)
         {
             try
@@ -469,6 +501,40 @@ namespace ProjectBLab
                     }
                 }
                
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        public void StudentResultRecord(string query)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataReader reader;
+                reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    ListofClasses Lt1 = new ListofClasses();
+                    Lt1.RemoveFromSTR();
+                    while (reader.Read())
+                    {
+                        StudentResultClass SRC = new StudentResultClass();
+                        SRC.StudentId1 = Convert.ToInt32(reader[0]);
+                        SRC.AssessmentComId1= Convert.ToInt32(reader[1]);
+                        SRC.RubricMeasurement1 = Convert.ToInt32(reader[2]);
+                        SRC.EvaluationDate1 = Convert.ToDateTime(reader[3]);
+                        Lt1.AddSTRList(SRC);
+
+                    }
+                }
+
             }
             catch (Exception ex)
             {
