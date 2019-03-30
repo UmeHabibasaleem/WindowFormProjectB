@@ -19,7 +19,10 @@ namespace ProjectBLab
         private static List<AssessmentClass> ASSC = new List<AssessmentClass>();
         private static List<AssessmentComClass> ASSCom = new List<AssessmentComClass>();
         private static List<StudentResultClass> STR = new List<StudentResultClass>();
-       
+        private static List<ClassAttendence> CA = new List<ClassAttendence>();
+        private static List<StudentAttendenceClass> SAC = new List<StudentAttendenceClass>();
+        private static List<string> AttendenceDate = new List<string>();
+        private static List<GenerateReport> CloReport = new List<GenerateReport>();
         internal List<CLOClass> CLOList
         {
             get
@@ -165,6 +168,58 @@ namespace ProjectBLab
             }
         }
 
+        internal  List<ClassAttendence> CA1
+        {
+            get
+            {
+                return CA;
+            }
+
+            set
+            {
+                CA = value;
+            }
+        }
+
+        internal  List<StudentAttendenceClass> SAC1
+        {
+            get
+            {
+                return SAC;
+            }
+
+            set
+            {
+                SAC = value;
+            }
+        }
+
+        public List<string> AttendenceDate1
+        {
+            get
+            {
+                return AttendenceDate;
+            }
+
+            set
+            {
+                AttendenceDate = value;
+            }
+        }
+
+        internal  List<GenerateReport> CloReport1
+        {
+            get
+            {
+                return CloReport;
+            }
+
+            set
+            {
+                CloReport = value;
+            }
+        }
+
         public void addIntolist( StudentClass st)
         {
             studentList.Add(st);
@@ -196,6 +251,10 @@ namespace ProjectBLab
         public void AddIntoAssnameList(string cl)
         {
             ASSname.Add(cl);
+        }
+        public void AddIntoAttendenceDate(string cl)
+        {
+            AttendenceDate.Add(cl);
         }
         public void AddIntoCLOnameList(string cl)
         {
@@ -237,5 +296,18 @@ namespace ProjectBLab
         {
             STR.Clear();
         }
-    }
+        public void addIntoAttendence(ClassAttendence st)
+        {
+            CA.Add(st);
+        }
+        public void addIntoStudentAttendence(StudentAttendenceClass st)
+        {
+            SAC.Add(st);
+        }
+        public void addIntoCloReport(GenerateReport gr)
+        {
+            CloReport.Add(gr);
+        }
+    
+}
 }

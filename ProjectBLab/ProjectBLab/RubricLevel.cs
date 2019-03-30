@@ -167,5 +167,17 @@ namespace ProjectBLab
         {
 
         }
+
+        private void Home_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Home H = new Home();
+            this.Hide();
+            H.Show();
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

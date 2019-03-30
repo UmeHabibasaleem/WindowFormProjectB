@@ -77,7 +77,6 @@ namespace ProjectBLab
         }
         private void StudentResult_Load(object sender, EventArgs e)
         {
-            //comoboxvalues();
             My_Own_Load();
         }
 
@@ -190,6 +189,13 @@ namespace ProjectBLab
         private void EvaluateDate_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Home_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Home H = new Home();
+            this.Hide();
+            H.Show();
         }
     }
 }

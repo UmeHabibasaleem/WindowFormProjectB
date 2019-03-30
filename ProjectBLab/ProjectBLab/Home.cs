@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace ProjectBLab
 {
@@ -64,6 +67,41 @@ namespace ProjectBLab
             AssessmentComponent AC = new AssessmentComponent();
             this.Hide();
             AC.Show();
+        }
+
+        private void Attendene_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Attendence AT = new Attendence();
+            this.Hide();
+            AT.Show();
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void StudentAttendence_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            StudentAttendence SA = new StudentAttendence();
+            this.Hide();
+            SA.Show();
+        }
+
+        private void GenerateCloReport_Click(object sender, EventArgs e)
+        {
+            CloReport Cr = new CloReport();
+            this.Hide();
+            Cr.Show();
+          /*  Document doc = new Document();
+            PdfWriter.GetInstance(doc, new FileStream("E:/Create.pdf", FileMode.Create));
+            doc.Open();
+            Paragraph p1 = new Paragraph("HelloWorld!");
+            doc.Add(p1);
+            doc.Close();
+            MessageBox.Show("file successfully created"); */
+
+
         }
     }
 }

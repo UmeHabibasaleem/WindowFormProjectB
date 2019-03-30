@@ -37,6 +37,7 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.Save = new System.Windows.Forms.Button();
             this.ADD = new System.Windows.Forms.Button();
+            this.Home = new System.Windows.Forms.LinkLabel();
             this.projectBDataSet5 = new ProjectBLab.ProjectBDataSet5();
             this.rubricBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projectBDataSet4 = new ProjectBLab.ProjectBDataSet4();
@@ -46,12 +47,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.StudentName1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.EvaluateDate = new System.Windows.Forms.DateTimePicker();
             this.AssessmentSelection = new System.Windows.Forms.ComboBox();
             this.AssessmentSel = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.assessmentTableAdapter = new ProjectBLab.ProjectBDataSet4TableAdapters.AssessmentTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.assessmentComClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -72,6 +73,7 @@
             this.EditSR = new System.Windows.Forms.DataGridViewButtonColumn();
             this.DeleteSr = new System.Windows.Forms.DataGridViewButtonColumn();
             this.studentResultClassBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.projectBDataSet1 = new ProjectBLab.ProjectBDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.studentClassBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assessmentComponentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet3)).BeginInit();
@@ -87,6 +89,7 @@
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StudentResultRecord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentResultClassBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // rubricTableAdapter
@@ -109,17 +112,24 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.Save, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.ADD, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(581, 162);
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.AutoScroll = true;
+            this.tableLayoutPanel3.ColumnCount = 6;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel3.Controls.Add(this.Save, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.ADD, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.Home, 4, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(16, 162);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(213, 46);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(778, 46);
             this.tableLayoutPanel3.TabIndex = 26;
             // 
             // Save
@@ -127,13 +137,14 @@
             this.Save.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Save.Location = new System.Drawing.Point(109, 3);
+            this.Save.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Save.Location = new System.Drawing.Point(261, 3);
             this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(101, 40);
+            this.Save.Size = new System.Drawing.Size(123, 40);
             this.Save.TabIndex = 1;
             this.Save.Text = "Save  ";
-            this.Save.UseVisualStyleBackColor = true;
+            this.Save.UseVisualStyleBackColor = false;
             this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // ADD
@@ -141,14 +152,31 @@
             this.ADD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ADD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ADD.Location = new System.Drawing.Point(3, 3);
+            this.ADD.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.ADD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ADD.Location = new System.Drawing.Point(132, 3);
             this.ADD.Name = "ADD";
-            this.ADD.Size = new System.Drawing.Size(100, 40);
+            this.ADD.Size = new System.Drawing.Size(123, 40);
             this.ADD.TabIndex = 0;
             this.ADD.Text = "Add";
-            this.ADD.UseVisualStyleBackColor = true;
+            this.ADD.UseVisualStyleBackColor = false;
             this.ADD.Click += new System.EventHandler(this.ADD_Click);
+            // 
+            // Home
+            // 
+            this.Home.ActiveLinkColor = System.Drawing.Color.AliceBlue;
+            this.Home.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.Home.AutoSize = true;
+            this.Home.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Home.LinkColor = System.Drawing.Color.MidnightBlue;
+            this.Home.Location = new System.Drawing.Point(519, 8);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(123, 29);
+            this.Home.TabIndex = 28;
+            this.Home.TabStop = true;
+            this.Home.Text = "Home";
+            this.Home.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Home_LinkClicked);
             // 
             // projectBDataSet5
             // 
@@ -173,6 +201,7 @@
             // RubricLSelection
             // 
             this.RubricLSelection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.RubricLSelection.BackColor = System.Drawing.Color.White;
             this.RubricLSelection.FormattingEnabled = true;
             this.RubricLSelection.Location = new System.Drawing.Point(107, 34);
             this.RubricLSelection.Name = "RubricLSelection";
@@ -194,13 +223,13 @@
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.StudentName1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label5, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label3, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.label6, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.EvaluateDate, 3, 1);
             this.tableLayoutPanel2.Controls.Add(this.AssessmentSelection, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.RubricLSelection, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.AssessmentSel, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(16, 73);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
@@ -214,16 +243,17 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(19, 65);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(18, 65);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 16);
+            this.label4.Size = new System.Drawing.Size(83, 15);
             this.label4.TabIndex = 26;
             this.label4.Text = "Assessment";
             // 
             // StudentName1
             // 
             this.StudentName1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.StudentName1.BackColor = System.Drawing.SystemColors.HighlightText;
             this.StudentName1.FormattingEnabled = true;
             this.StudentName1.Location = new System.Drawing.Point(107, 4);
             this.StudentName1.Name = "StudentName1";
@@ -236,32 +266,21 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(21, 37);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(18, 37);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 16);
+            this.label5.Size = new System.Drawing.Size(83, 15);
             this.label5.TabIndex = 3;
             this.label5.Text = "RubricLevel";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "StudentName";
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(350, 7);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(363, 8);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 16);
+            this.label3.Size = new System.Drawing.Size(97, 13);
             this.label3.TabIndex = 1;
             this.label3.Text = "AssessmentCom";
             // 
@@ -269,16 +288,17 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(370, 37);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(368, 37);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 16);
+            this.label6.Size = new System.Drawing.Size(92, 15);
             this.label6.TabIndex = 4;
             this.label6.Text = "EvaluateDate";
             // 
             // EvaluateDate
             // 
             this.EvaluateDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.EvaluateDate.CalendarMonthBackground = System.Drawing.Color.LemonChiffon;
             this.EvaluateDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.EvaluateDate.Location = new System.Drawing.Point(466, 35);
             this.EvaluateDate.Name = "EvaluateDate";
@@ -289,6 +309,7 @@
             // AssessmentSelection
             // 
             this.AssessmentSelection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.AssessmentSelection.BackColor = System.Drawing.SystemColors.HighlightText;
             this.AssessmentSelection.FormattingEnabled = true;
             this.AssessmentSelection.Location = new System.Drawing.Point(466, 4);
             this.AssessmentSelection.Name = "AssessmentSelection";
@@ -300,6 +321,7 @@
             // AssessmentSel
             // 
             this.AssessmentSel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.AssessmentSel.BackColor = System.Drawing.Color.White;
             this.AssessmentSel.FormattingEnabled = true;
             this.AssessmentSel.Location = new System.Drawing.Point(107, 63);
             this.AssessmentSel.Name = "AssessmentSel";
@@ -307,6 +329,18 @@
             this.AssessmentSel.TabIndex = 27;
             this.AssessmentSel.Tag = "";
             this.AssessmentSel.SelectedIndexChanged += new System.EventHandler(this.AssessmentSel_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(7, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "StudentName";
             // 
             // assessmentTableAdapter
             // 
@@ -379,6 +413,9 @@
             // 
             // tableLayoutPanel4
             // 
+            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Controls.Add(this.StudentResultRecord, 0, 0);
@@ -396,6 +433,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StudentResultRecord.AutoGenerateColumns = false;
             this.StudentResultRecord.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.StudentResultRecord.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
             this.StudentResultRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.StudentResultRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.studentId1DataGridViewTextBoxColumn1,
@@ -405,6 +443,7 @@
             this.EditSR,
             this.DeleteSr});
             this.StudentResultRecord.DataSource = this.studentResultClassBindingSource1;
+            this.StudentResultRecord.GridColor = System.Drawing.SystemColors.ScrollBar;
             this.StudentResultRecord.Location = new System.Drawing.Point(3, 3);
             this.StudentResultRecord.Name = "StudentResultRecord";
             this.StudentResultRecord.Size = new System.Drawing.Size(769, 289);
@@ -455,10 +494,16 @@
             // 
             this.studentResultClassBindingSource1.DataSource = typeof(ProjectBLab.StudentResultClass);
             // 
+            // projectBDataSet1
+            // 
+            this.projectBDataSet1.DataSetName = "ProjectBDataSet";
+            this.projectBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // StudentResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(811, 536);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.tableLayoutPanel3);
@@ -471,6 +516,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.assessmentComponentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet3)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rubricBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet4)).EndInit();
@@ -484,6 +530,7 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.StudentResultRecord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentResultClassBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -533,5 +580,7 @@
         private System.Windows.Forms.BindingSource studentResultClassBindingSource1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox AssessmentSel;
+        private System.Windows.Forms.LinkLabel Home;
+        private ProjectBDataSet projectBDataSet1;
     }
 }

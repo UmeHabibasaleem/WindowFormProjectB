@@ -31,8 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.RubricsDetail = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clonameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.details1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.rubricsClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Save = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Add = new System.Windows.Forms.Button();
@@ -49,14 +53,12 @@
             this.projectBDataSet1 = new ProjectBLab.ProjectBDataSet1();
             this.cloTableAdapter = new ProjectBLab.ProjectBDataSetTableAdapters.CloTableAdapter();
             this.cloTableAdapter1 = new ProjectBLab.ProjectBDataSet1TableAdapters.CloTableAdapter();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clonameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.details1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rubricsClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cLOClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rubricsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Home = new System.Windows.Forms.LinkLabel();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RubricsDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rubricsClassBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -64,7 +66,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cloBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rubricsClassBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cLOClassBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rubricsBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -105,6 +106,24 @@
             this.RubricsDetail.TabIndex = 0;
             this.RubricsDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RubricsDetail_CellContentClick);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // clonameDataGridViewTextBoxColumn
+            // 
+            this.clonameDataGridViewTextBoxColumn.DataPropertyName = "Cloname";
+            this.clonameDataGridViewTextBoxColumn.HeaderText = "Cloname";
+            this.clonameDataGridViewTextBoxColumn.Name = "clonameDataGridViewTextBoxColumn";
+            // 
+            // details1DataGridViewTextBoxColumn
+            // 
+            this.details1DataGridViewTextBoxColumn.DataPropertyName = "Details1";
+            this.details1DataGridViewTextBoxColumn.HeaderText = "Details1";
+            this.details1DataGridViewTextBoxColumn.Name = "details1DataGridViewTextBoxColumn";
+            // 
             // Edit
             // 
             this.Edit.DataPropertyName = "Id";
@@ -121,18 +140,23 @@
             this.Delete.Text = "Delete";
             this.Delete.UseColumnTextForButtonValue = true;
             // 
+            // rubricsClassBindingSource
+            // 
+            this.rubricsClassBindingSource.DataSource = typeof(ProjectBLab.RubricsClass);
+            // 
             // Save
             // 
             this.Save.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Save.Location = new System.Drawing.Point(106, 3);
+            this.Save.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Save.Location = new System.Drawing.Point(117, 3);
             this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(104, 40);
+            this.Save.Size = new System.Drawing.Size(80, 40);
             this.Save.TabIndex = 1;
             this.Save.Text = "Save";
-            this.Save.UseVisualStyleBackColor = true;
+            this.Save.UseVisualStyleBackColor = false;
             this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // label1
@@ -151,13 +175,14 @@
             this.Add.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Add.Location = new System.Drawing.Point(3, 3);
+            this.Add.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Add.Location = new System.Drawing.Point(30, 3);
             this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(97, 40);
+            this.Add.Size = new System.Drawing.Size(81, 40);
             this.Add.TabIndex = 0;
             this.Add.Text = "Add";
-            this.Add.UseVisualStyleBackColor = true;
+            this.Add.UseVisualStyleBackColor = false;
             this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
             // tableLayoutPanel1
@@ -178,34 +203,38 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 19);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(48, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 16);
+            this.label2.Size = new System.Drawing.Size(31, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Clo";
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.7892F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
-            this.tableLayoutPanel3.Controls.Add(this.Save, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.Add, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(64, 406);
+            this.tableLayoutPanel3.ColumnCount = 5;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.910892F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.71287F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.38284F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.06285F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.625139F));
+            this.tableLayoutPanel3.Controls.Add(this.Home, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.Save, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.Add, 1, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(53, 386);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(213, 46);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(303, 46);
             this.tableLayoutPanel3.TabIndex = 27;
             // 
             // Details
             // 
             this.Details.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Details.Location = new System.Drawing.Point(57, 73);
+            this.Details.Location = new System.Drawing.Point(85, 73);
             this.Details.Multiline = true;
             this.Details.Name = "Details";
-            this.Details.Size = new System.Drawing.Size(139, 60);
+            this.Details.Size = new System.Drawing.Size(164, 60);
             this.Details.TabIndex = 0;
             this.Details.TextChanged += new System.EventHandler(this.Details_TextChanged);
             // 
@@ -213,29 +242,29 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(8, 87);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(22, 95);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 32);
+            this.label5.Size = new System.Drawing.Size(57, 16);
             this.label5.TabIndex = 3;
             this.label5.Text = "Details";
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.00422F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.99578F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.57143F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.96552F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.75862F));
             this.tableLayoutPanel2.Controls.Add(this.Details, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.Closelection, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(53, 155);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(39, 155);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.29412F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.70588F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(276, 153);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(290, 153);
             this.tableLayoutPanel2.TabIndex = 29;
             // 
             // Closelection
@@ -243,9 +272,9 @@
             this.Closelection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Closelection.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cloBindingSource, "Name", true));
             this.Closelection.FormattingEnabled = true;
-            this.Closelection.Location = new System.Drawing.Point(57, 16);
+            this.Closelection.Location = new System.Drawing.Point(85, 16);
             this.Closelection.Name = "Closelection";
-            this.Closelection.Size = new System.Drawing.Size(139, 21);
+            this.Closelection.Size = new System.Drawing.Size(164, 21);
             this.Closelection.TabIndex = 22;
             this.Closelection.Tag = "";
             this.Closelection.SelectedIndexChanged += new System.EventHandler(this.Closelection_SelectedIndexChanged);
@@ -278,28 +307,6 @@
             // 
             this.cloTableAdapter1.ClearBeforeFill = true;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // clonameDataGridViewTextBoxColumn
-            // 
-            this.clonameDataGridViewTextBoxColumn.DataPropertyName = "Cloname";
-            this.clonameDataGridViewTextBoxColumn.HeaderText = "Cloname";
-            this.clonameDataGridViewTextBoxColumn.Name = "clonameDataGridViewTextBoxColumn";
-            // 
-            // details1DataGridViewTextBoxColumn
-            // 
-            this.details1DataGridViewTextBoxColumn.DataPropertyName = "Details1";
-            this.details1DataGridViewTextBoxColumn.HeaderText = "Details1";
-            this.details1DataGridViewTextBoxColumn.Name = "details1DataGridViewTextBoxColumn";
-            // 
-            // rubricsClassBindingSource
-            // 
-            this.rubricsClassBindingSource.DataSource = typeof(ProjectBLab.RubricsClass);
-            // 
             // cLOClassBindingSource
             // 
             this.cLOClassBindingSource.DataSource = typeof(ProjectBLab.CLOClass);
@@ -308,10 +315,27 @@
             // 
             this.rubricsBindingSource.DataSource = typeof(ProjectBLab.Rubrics);
             // 
+            // Home
+            // 
+            this.Home.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.Home.AutoSize = true;
+            this.Home.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Home.LinkColor = System.Drawing.Color.MidnightBlue;
+            this.Home.Location = new System.Drawing.Point(203, 15);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(67, 16);
+            this.Home.TabIndex = 30;
+            this.Home.TabStop = true;
+            this.Home.Text = "Home";
+            this.Home.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Home.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Home_LinkClicked);
+            // 
             // Rubrics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(899, 503);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel4);
@@ -322,16 +346,17 @@
             this.Load += new System.EventHandler(this.Rubrics_Load);
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.RubricsDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rubricsClassBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cloBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cloBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rubricsClassBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cLOClassBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rubricsBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -366,5 +391,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn details1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.LinkLabel Home;
     }
 }

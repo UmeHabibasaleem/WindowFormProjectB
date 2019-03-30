@@ -123,46 +123,75 @@
   <metadata name="Delete.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="assessmentComClassBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>870, 17</value>
-  </metadata>
-  <metadata name="assessmentBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
-  <metadata name="assessmentBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
-  <metadata name="projectBDataSet4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1115, 17</value>
-  </metadata>
-  <metadata name="projectBDataSet4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1115, 17</value>
-  </metadata>
-  <metadata name="rubricBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>542, 56</value>
-  </metadata>
-  <metadata name="projectBDataSet5.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>396, 56</value>
-  </metadata>
-  <metadata name="projectBDataSet5.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>396, 56</value>
-  </metadata>
-  <metadata name="projectBDataSet3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>216, 17</value>
-  </metadata>
-  <metadata name="assessmentComponentBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>362, 17</value>
-  </metadata>
-  <metadata name="assessmentComponentTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>619, 17</value>
-  </metadata>
-  <metadata name="studentClassBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="studentAttendenceClassBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="assessmentTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>209, 56</value>
+  <metadata name="Edit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
-  <metadata name="rubricTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>704, 56</value>
+  <metadata name="Delete.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <metadata name="studentAttendenceClassBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
 </root>

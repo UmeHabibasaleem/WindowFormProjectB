@@ -95,9 +95,14 @@ namespace ProjectBLab
         }
         public void Delete(int id)
         {
-            string query = "Delete FROM Assessment where Id = " + id;
             Connection C1 = new Connection();
-            C1.Deletion(query);
+            string query = "select Id FROM AssessmentComponent where AssessmentId = " + id;
+           int AssessmentId = C1.get_Id_clo(query);
+           string query1 = "Delete FROM AssessmentComponent where Id = " + AssessmentId;
+           C1.Deletion(query1); 
+           string query2 = "Delete FROM Assessment where Id = " + id;
+           
+           C1.Deletion(query2);
         }
         public void Edit(int id, string Title, int totalmarks, int totalweightage, DateTime Datecreated)
         {

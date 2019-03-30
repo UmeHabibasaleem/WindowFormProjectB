@@ -35,7 +35,7 @@ namespace ProjectBLab
             }
             catch (Exception ex)
             {
-                throw ex;
+               // throw ex;
                 MessageBox.Show("dubicate data can,t insert in it");
                 return;
             }
@@ -53,7 +53,7 @@ namespace ProjectBLab
                 conn.Open();
                 SqlDataReader reader;
                 reader = command.ExecuteReader();
-                MessageBox.Show("Data Deleted");
+              //  MessageBox.Show("Data Deleted");
                 conn.Close();
             }
             catch (Exception ex)
@@ -411,6 +411,34 @@ namespace ProjectBLab
                 conn.Close();
             }
         }
+        public void DateForAttendence(string query)
+        {
+            try
+            {
+                ListofClasses l = new ListofClasses();
+
+                SqlCommand command = new SqlCommand(query, conn);
+                if (conn.State != System.Data.ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+                SqlDataReader reader;
+                reader = command.ExecuteReader();
+                l.AttendenceDate1.Clear();
+                while (reader.Read())
+                {
+                    l.AddIntoAttendenceDate(reader[0].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
         public void NameForAssementComList(string query)
         {
             try
@@ -535,6 +563,104 @@ namespace ProjectBLab
                     }
                 }
 
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        public void AttendenceRecord(string query)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataReader reader;
+                reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    ListofClasses Lt1 = new ListofClasses();
+                    Lt1.CA1.Clear();
+                    while (reader.Read())
+                    {
+                        ClassAttendence Ca = new ClassAttendence();
+                        Ca.Id1= Convert.ToInt32(reader[0]);
+                        Ca.AttendenceDate1 = Convert.ToDateTime(reader[1]);
+                        Lt1.addIntoAttendence(Ca);
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        public void StudentAttendenceRecord(string query)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataReader reader;
+                reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    ListofClasses Lt1 = new ListofClasses();
+                    Lt1.SAC1.Clear();
+                    while (reader.Read())
+                    {
+                        StudentAttendenceClass SRC = new StudentAttendenceClass();
+                        SRC.StudentId1 = Convert.ToInt32(reader[1]);
+                        SRC.AttendanceId1 = Convert.ToInt32(reader[0]);
+                        SRC.AttendanceStatus1 = Convert.ToInt32(reader[2]);
+                        Lt1.addIntoStudentAttendence(SRC);
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        public void ClowiseResultRecord(string query)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataReader reader;
+                reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    ListofClasses Lt1 = new ListofClasses();
+                    Lt1.CloReport1.Clear();
+                    while (reader.Read())
+                    {
+                        GenerateReport st1 = new GenerateReport();
+                        st1.RegistrationNumber1 = reader[0].ToString();
+                        st1.CloName1 = reader[1].ToString();
+                        st1.ObtainMarks1 = reader[2].ToString();
+                        Lt1.addIntoCloReport(st1);
+
+                    }
+                }
+                conn.Close();
             }
             catch (Exception ex)
             {

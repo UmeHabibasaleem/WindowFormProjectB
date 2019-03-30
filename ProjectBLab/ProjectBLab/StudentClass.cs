@@ -128,9 +128,13 @@ namespace ProjectBLab
         }
         public void Delete(int id)
         {
-            string query = "Delete FROM student where Id = " + id ;
+            string query = "Delete FROM studentResult where StudentId = " + id;
             Connection C1 = new Connection();
             C1.Deletion(query);
+            string query2 = "Delete FROM studentAttendance where StudentId = " + id;
+            C1.Deletion(query2);
+            string query1 = "Delete FROM student where Id = " + id ;
+            C1.Deletion(query1);
         }
         public void Edit(int id, string firstname, string lastname, string contact, string email, string RegistrationNo, int status)
         {

@@ -93,8 +93,8 @@ namespace ProjectBLab
             }
             else
             {
-                string Rubric = RubricSelection.GetItemText(RubricSelection.SelectedItem);
-                string assessment = AssessmentSelection.GetItemText(AssessmentSelection.SelectedItem);
+                string Rubric = RubricSelection.Text;
+                string assessment = AssessmentSelection.Text;
                 ACC.ASSCOM_ADD(ASSName.Text ,Rubric,assessment,Convert.ToInt32(TotalMarks.Text),DateCreated.Value,DateUpdated.Value);
                 RubricSelection.DataSource = null;
                 ASSName.Text = "";
@@ -158,8 +158,8 @@ namespace ProjectBLab
 
         private void Save_Click(object sender, EventArgs e)
         {
-            string Rubric = RubricSelection.GetItemText(RubricSelection.SelectedItem);
-            string assessment = AssessmentSelection.GetItemText(AssessmentSelection.SelectedItem);
+            string Rubric = RubricSelection.Text;
+            string assessment = AssessmentSelection.Text;
             AssessmentComClass Rub = new AssessmentComClass();
             Rub.Edit(globalindex,ASSName.Text , Rubric, assessment, Convert.ToInt32(TotalMarks.Text), DateCreated.Value, DateUpdated.Value);
             AssessmentRecord.DataSource = null;
@@ -171,6 +171,13 @@ namespace ProjectBLab
             DateUpdated.ResetText();
             My_Own_Load();
             ADD.Visible = true;
+        }
+
+        private void Home_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Home H = new Home();
+            this.Hide();
+            H.Show();
         }
     }
  }

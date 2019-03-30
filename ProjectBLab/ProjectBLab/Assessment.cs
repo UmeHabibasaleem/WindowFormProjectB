@@ -144,5 +144,12 @@ namespace ProjectBLab
             AssessmentRecord.DataSource = lt1.ASSC1;
             
         }
+
+        private void Home_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Home H = new Home();
+            this.Hide();
+            H.Show();
+        }
     }
 }
