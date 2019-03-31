@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace ProjectBLab
 {
+    /// <summary>
+    /// This Class Contain the Functions and Datamembers related to the Assessment Module in project.
+    /// </summary>
     class AssessmentClass
     {
+        /// <summary>
+        /// Datamemebers and the Getter Seter functions of Datamemebers.
+        /// </summary>
         private int Id;
         private string Title;
         private DateTime DateCreated;
@@ -78,6 +84,14 @@ namespace ProjectBLab
                 TotalWeightage = value;
             }
         }
+        /// <summary>
+        /// This Function Create a query to insert the Assesssment in the DataBase storage through insertion function.
+        /// </summary>
+        /// Multiple parameters.
+        /// <param name="Title">Used to indicate title of Assessment.</param>
+        /// <param name="totalMarks">Used to specify totalMarks.</param>
+        /// <param name="totalWeightage">Used to specify Totalweightage.</param>
+        /// <param name="DateCreated">Used to specify Datecreated of Assessment.</param>
         public void ADD_Asses(string Title, int totalmarks, int totalweightage, DateTime Datecreated)
         {
 
@@ -86,6 +100,9 @@ namespace ProjectBLab
             C1.Insertion(Insertquery);
 
         }
+        /// <summary>
+        /// This Function Create a query to get all the stored data of  the Assesssment in the DataBase storage through ShowASSRecord function.
+        /// </summary>
         public void ASSRecord()
         {
             string query = "SELECT * FROM Assessment";
@@ -93,6 +110,10 @@ namespace ProjectBLab
             C1.ShowASSRecord(query);
 
         }
+        /// <summary>
+        /// This Function Create a query to Delete the Assesssment in the DataBase storage through Delete function.
+        /// this function firsttly delete all those data in which it's id exist as forein key.
+        /// </summary>
         public void Delete(int id)
         {
             Connection C1 = new Connection();
@@ -104,6 +125,15 @@ namespace ProjectBLab
            
            C1.Deletion(query2);
         }
+        /// <summary>
+        /// This Function Create a query to Update the Assesssment in the DataBase storage through Edit function.
+        /// </summary>
+        /// Multiple parameters.
+        /// <param name="id">Used to indicate id of Assessment against the data will be update.</param>
+        /// <param name="Title">Used to indicate title of Assessment.</param>
+        /// <param name="totalMarks">Used to specify totalMarks.</param>
+        /// <param name="totalWeightage">Used to specify Totalweightage.</param>
+        /// <param name="DateCreated">Used to specify Datecreated of Assessment.</param>
         public void Edit(int id, string Title, int totalmarks, int totalweightage, DateTime Datecreated)
         {
             string query = "UPDATE Assessment SET  Title = '" + Title + "', DateCreated = '" + Datecreated + "',TotalMarks = '" + totalmarks + "',TotalWeightage = '" + totalweightage + "' where Id = " + id;

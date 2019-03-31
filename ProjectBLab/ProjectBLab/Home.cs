@@ -103,5 +103,12 @@ namespace ProjectBLab
 
 
         }
+
+        private void AssessmentReport_Click(object sender, EventArgs e)
+        {
+            AssessmentWiseReport AWR = new AssessmentWiseReport();
+            this.Hide();
+            AWR.Show();
+        }
     }
 }

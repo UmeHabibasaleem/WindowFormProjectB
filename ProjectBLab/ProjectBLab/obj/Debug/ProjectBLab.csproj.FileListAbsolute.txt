@@ -28,3 +28,5 @@ C:\Users\Abubakar\Documents\GitHub\WindowFormProjectB\ProjectBLab\ProjectBLab\ob
 C:\Users\Abubakar\Documents\GitHub\WindowFormProjectB\ProjectBLab\ProjectBLab\bin\Debug\itextsharp.dll
 C:\Users\Abubakar\Documents\GitHub\WindowFormProjectB\ProjectBLab\ProjectBLab\bin\Debug\itextsharp.xml
 C:\Users\Abubakar\Documents\GitHub\WindowFormProjectB\ProjectBLab\ProjectBLab\obj\Debug\ProjectBLab.CloReport.resources
+C:\Users\Abubakar\Documents\GitHub\WindowFormProjectB\ProjectBLab\ProjectBLab\obj\Debug\ProjectBLab.csprojResolveAssemblyReference.cache
+C:\Users\Abubakar\Documents\GitHub\WindowFormProjectB\ProjectBLab\ProjectBLab\obj\Debug\ProjectBLab.AssessmentWiseReport.resources

@@ -8,8 +8,14 @@ using System.Windows.Forms;
 
 namespace ProjectBLab
 {
+    /// <summary>
+    ///  This class contain the Datamembers and Functions related to the Students
+    /// </summary>
     class StudentClass
     {
+        /// <summary>
+        ///  Datamemebers and the Getter Seter functions of Datamemebers.
+        /// </summary>
         private int Id;
         private string firstName;
         private string lastName;
@@ -108,8 +114,15 @@ namespace ProjectBLab
             }
         }
 
-       
-
+        /// <summary>
+        /// This Function used to add the student in the record of students in database by usning insertion function
+        /// </summary>
+        /// <param name="firstname">Indicate the FisrstName of student</param>
+        /// <param name="lastname">Indicate the LastName of student</param>
+        /// <param name="contact">Indicate the ContactNo of student</param>
+        /// <param name="email">Indicate the Email of student</param>
+        /// <param name="RegistrationNo">Indicate the RegistrationNo of student</param>
+        /// <param name="status">Indicate the Status of student</param>
         public void ADD_student(string firstname, string lastname,string contact,string email,string RegistrationNo,int status)
         {
 
@@ -119,6 +132,9 @@ namespace ProjectBLab
             C1.Insertion(Insertquery);
           
         }
+        /// <summary>
+        /// This function used to get the record of students
+        /// </summary>
         public void StudentRecord()
         {
             string query = "SELECT * FROM student";
@@ -126,6 +142,11 @@ namespace ProjectBLab
             C1.Show_Record(query);
 
         }
+
+        /// <summary>
+        /// This function used in order to  delete the student from the student Record
+        /// </summary>
+        /// <param name="id">Indicate the Id of the student</param>
         public void Delete(int id)
         {
             string query = "Delete FROM studentResult where StudentId = " + id;
@@ -136,6 +157,16 @@ namespace ProjectBLab
             string query1 = "Delete FROM student where Id = " + id ;
             C1.Deletion(query1);
         }
+        /// <summary>
+        /// This Function used to edit the student in the record of students in database by usning Update function
+        /// </summary>
+        /// <param name="id">Indicate the Id of student</param>
+        /// <param name="firstname">Indicate the FisrstName of student</param>
+        /// <param name="lastname">Indicate the LastName of student</param>
+        /// <param name="contact">Indicate the ContactNo of student</param>
+        /// <param name="email">Indicate the Email of student</param>
+        /// <param name="RegistrationNo">Indicate the RegistrationNo of student</param>
+        /// <param name="status">Indicate the Status of student</param>
         public void Edit(int id, string firstname, string lastname, string contact, string email, string RegistrationNo, int status)
         {
             string query = "UPDATE student SET  FirstName = '" + firstname + "', Lastname = '" + lastname + "', Contact = '" + contact + "', Email = '" + email + "', RegistrationNumber = '" + RegistrationNo  + "', Status = '" + status + "' where Id = " + id;

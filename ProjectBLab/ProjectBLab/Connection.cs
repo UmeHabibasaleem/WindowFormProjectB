@@ -8,12 +8,21 @@ using System.Windows.Forms;
 
 namespace ProjectBLab
 {
+    /// <summary>
+    /// This class is used to interact the database and the business logic
+    /// </summary>
     class Connection
     {
-
+        /// <summary>
+        /// Connection building with sql
+        /// </summary>
         static String conURL = @"Data Source = . ; Initial Catalog = ProjectB; User ID = mylogin; Password = 12345; MultipleActiveResultSets = True;";
         SqlConnection conn = new SqlConnection(conURL);
 
+        /// <summary>
+        /// Insert the data in database
+        /// </summary>
+        /// <param name="insertquery"> Query to isert the data</param>
         public void Insertion(string insertquery)
         {
             try
@@ -31,12 +40,11 @@ namespace ProjectBLab
                 {
                     MessageBox.Show("Data could not add. Please try again!");
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {
                // throw ex;
-                MessageBox.Show("dubicate data can,t insert in it");
+                MessageBox.Show("dublicate data can,t insert in it");
                 return;
             }
             finally
@@ -45,6 +53,11 @@ namespace ProjectBLab
             }
 
         }
+
+        /// <summary>
+        /// This function Delete The data from the Database acoording the quer passed in parameter
+        /// </summary>
+        /// <param name="Deletequery"> Query of the deletion</param>
         public void Deletion(string Deletequery)
         {
             try
@@ -54,7 +67,6 @@ namespace ProjectBLab
                 SqlDataReader reader;
                 reader = command.ExecuteReader();
               //  MessageBox.Show("Data Deleted");
-                conn.Close();
             }
             catch (Exception ex)
             {
@@ -68,6 +80,11 @@ namespace ProjectBLab
             }
 
         }
+
+        /// <summary>
+        /// This function is used to update the data in the dataBase
+        /// </summary>
+        /// <param name="updatequery">Query of the update</param>
         public void UPdate(string updatequery)
         {
             try
@@ -77,7 +94,6 @@ namespace ProjectBLab
                 SqlDataReader reader;
                 reader = command.ExecuteReader();
                 MessageBox.Show("Data has been updated");
-                conn.Close();
             }
             catch (Exception ex)
             {
@@ -89,6 +105,11 @@ namespace ProjectBLab
             }
 
         }
+
+        /// <summary>
+        /// This function insert the student record in the StudentRecordList
+        /// </summary>
+        /// <param name="query">Query to retrieve the data from database</param>
         public void Show_Record(string query)
         {
             try
@@ -115,7 +136,6 @@ namespace ProjectBLab
 
                     }
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {
@@ -126,6 +146,11 @@ namespace ProjectBLab
                 conn.Close();
             }
         }
+
+        /// <summary>
+        /// This function insert the CLO record in the CLORecordList
+        /// </summary>
+        /// <param name="query">Query to retrieve the data from database</param>
         public void Show_CLoRecord(string query)
         {
             try
@@ -160,6 +185,11 @@ namespace ProjectBLab
                 conn.Close();
             }
         }
+
+        /// <summary>
+        /// This function used to insert the RubricLevel record in RubricLevel List
+        /// </summary>
+        /// <param name="query">Query to retrieve the data from database</param>
         public void ShowRubricLevelRecord(string query)
         {
             try
@@ -185,7 +215,6 @@ namespace ProjectBLab
 
                     }
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {
@@ -196,6 +225,12 @@ namespace ProjectBLab
                 conn.Close();
             }
         }
+
+        /// <summary>
+        /// This function used to get the id of the required object accordint to passed query
+        /// </summary>
+        /// <param name="query">Indicate the query</param>
+        /// <returns>Return the Id of the required thing</returns>
         public int get_Id_clo(string query)
         {
             int id = -1;
@@ -222,6 +257,11 @@ namespace ProjectBLab
             }
             return id;
         }
+
+        /// <summary>
+        /// This function used to insert the Rubric record in Rubric List
+        /// </summary>
+        /// <param name="query">Query to retrieve the data from database</param>
         public void RubricRecord(string query)
         {
             try
@@ -249,7 +289,6 @@ namespace ProjectBLab
                         Lt1.AddIntoRubricList(Rub);
                     }
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {
@@ -260,6 +299,12 @@ namespace ProjectBLab
                 conn.Close();
             }
         }
+
+        /// <summary>
+        /// This function return the Name if Clo
+        /// </summary>
+        /// <param name="query">Query to retreive of Clo name</param>
+        /// <returns>Name of Clo</returns>
         public string Cloname(string query)
         {
             try
@@ -288,6 +333,12 @@ namespace ProjectBLab
             }
 
         }
+
+        /// <summary>
+        /// Used to get the Id of the rubric
+        /// </summary>
+        /// <param name="query">Query to get the Id of the Rubric</param>
+        /// <returns>The id of the quer</returns>
         public int MyRubricID(string query)
         {
             int id = 0;
@@ -327,6 +378,10 @@ namespace ProjectBLab
             return id;
         }
 
+        /// <summary>
+        /// This function used to get the Name of the comobox list 
+        /// </summary>
+        /// <param name="query">Query to retrieve require data</param>
         public void nameForcomoboxList(string query)
         {
             try
@@ -355,6 +410,11 @@ namespace ProjectBLab
                 conn.Close();
             }
         }
+
+        /// <summary>
+        /// This function is used to get the Title of assessment From the Database
+        /// </summary>
+        /// <param name="query">Indicate the query to retrieve the data</param>
         public void TitleForAssesssment(string query)
         {
             try
@@ -383,6 +443,11 @@ namespace ProjectBLab
                 conn.Close();
             }
         }
+
+        /// <summary>
+        /// Retrieve the studentName for the student
+        /// </summary>
+        /// <param name="query">Indicate the query</param>
         public void NameForStudentList(string query)
         {
             try
@@ -411,6 +476,11 @@ namespace ProjectBLab
                 conn.Close();
             }
         }
+
+        /// <summary>
+        /// This function is used to get the Date od Attendence
+        /// </summary>
+        /// <param name="query">Indicate the query</param>
         public void DateForAttendence(string query)
         {
             try
@@ -439,6 +509,11 @@ namespace ProjectBLab
                 conn.Close();
             }
         }
+
+        /// <summary>
+        /// This Function is used to get the Name of the assessmentComponentList
+        /// </summary>
+        /// <param name="query">Indicate the Query</param>
         public void NameForAssementComList(string query)
         {
             try
@@ -467,6 +542,11 @@ namespace ProjectBLab
                 conn.Close();
             }
         }
+
+        /// <summary>
+        /// This function used to insert the Aseseement record in Assessment List
+        /// </summary>
+        /// <param name="query">Query to retrieve the data from database</param>
         public void ShowASSRecord(string query)
         {
             try
@@ -502,6 +582,11 @@ namespace ProjectBLab
                 conn.Close();
             }
         }
+
+        /// <summary>
+        /// This function used to insert the AssessmentComponent Record in AssessmentComList 
+        /// </summary>
+        /// <param name="query">Query to retrieve the data from database</param>
         public void AssCRecord(string query)
         {
             try
@@ -539,6 +624,11 @@ namespace ProjectBLab
                 conn.Close();
             }
         }
+
+        /// <summary>
+        /// This function used to insert the StudentResult record in StudentResult List
+        /// </summary>
+        /// <param name="query">Query to retrieve the data from database</param>
         public void StudentResultRecord(string query)
         {
             try
@@ -573,6 +663,11 @@ namespace ProjectBLab
                 conn.Close();
             }
         }
+
+        /// <summary>
+        /// This function used to insert the Attendence Record in ClassAttendance List
+        /// </summary>
+        /// <param name="query">Query to retrieve the data from database</param>
         public void AttendenceRecord(string query)
         {
             try
@@ -605,6 +700,11 @@ namespace ProjectBLab
                 conn.Close();
             }
         }
+
+        /// <summary>
+        /// This function used to insert the StudentAttendance record in studentAttendance List
+        /// </summary>
+        /// <param name="query">Query to retrieve the data from database</param>
         public void StudentAttendenceRecord(string query)
         {
             try
@@ -638,6 +738,10 @@ namespace ProjectBLab
                 conn.Close();
             }
         }
+        /// <summary>
+        /// This function used to insert the CloWiseResult record in ClowiseResult List
+        /// </summary>
+        /// <param name="query">Query to retrieve the data from database</param>
         public void ClowiseResultRecord(string query)
         {
             try
@@ -655,12 +759,12 @@ namespace ProjectBLab
                         GenerateReport st1 = new GenerateReport();
                         st1.RegistrationNumber1 = reader[0].ToString();
                         st1.CloName1 = reader[1].ToString();
-                        st1.ObtainMarks1 = reader[2].ToString();
+                        st1.TotalMarks1 = Convert.ToInt32(reader[2]);
+                        st1.ObtainMarks1 = Convert.ToInt32(reader[3]);
                         Lt1.addIntoCloReport(st1);
 
                     }
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {

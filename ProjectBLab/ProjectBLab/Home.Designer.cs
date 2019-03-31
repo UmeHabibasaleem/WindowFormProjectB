@@ -30,18 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.StudentAttendence = new System.Windows.Forms.LinkLabel();
             this.Attendene = new System.Windows.Forms.LinkLabel();
-            this.RLManagement = new System.Windows.Forms.LinkLabel();
             this.AssComManage = new System.Windows.Forms.LinkLabel();
-            this.RubManagement = new System.Windows.Forms.LinkLabel();
             this.ASSMAnagement = new System.Windows.Forms.LinkLabel();
-            this.CloManagement = new System.Windows.Forms.LinkLabel();
             this.StuResultManagement = new System.Windows.Forms.LinkLabel();
             this.StuManagement = new System.Windows.Forms.LinkLabel();
+            this.CloManagement = new System.Windows.Forms.LinkLabel();
+            this.RubManagement = new System.Windows.Forms.LinkLabel();
+            this.RLManagement = new System.Windows.Forms.LinkLabel();
             this.GenerateCloReport = new System.Windows.Forms.Button();
+            this.StudentAttendence = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.AssessmentReport = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -55,6 +56,7 @@
             this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.AssessmentReport, 0, 10);
             this.tableLayoutPanel2.Controls.Add(this.Attendene, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.AssComManage, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.ASSMAnagement, 0, 1);
@@ -83,20 +85,6 @@
             this.tableLayoutPanel2.TabIndex = 1;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
-            // StudentAttendence
-            // 
-            this.StudentAttendence.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.StudentAttendence.AutoSize = true;
-            this.StudentAttendence.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StudentAttendence.LinkColor = System.Drawing.Color.MidnightBlue;
-            this.StudentAttendence.Location = new System.Drawing.Point(65, 391);
-            this.StudentAttendence.Name = "StudentAttendence";
-            this.StudentAttendence.Size = new System.Drawing.Size(206, 16);
-            this.StudentAttendence.TabIndex = 8;
-            this.StudentAttendence.TabStop = true;
-            this.StudentAttendence.Text = "Student Attendence Management";
-            this.StudentAttendence.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.StudentAttendence_LinkClicked);
-            // 
             // Attendene
             // 
             this.Attendene.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -110,20 +98,6 @@
             this.Attendene.TabStop = true;
             this.Attendene.Text = "Attendence Management";
             this.Attendene.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Attendene_LinkClicked);
-            // 
-            // RLManagement
-            // 
-            this.RLManagement.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.RLManagement.AutoSize = true;
-            this.RLManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RLManagement.LinkColor = System.Drawing.Color.MidnightBlue;
-            this.RLManagement.Location = new System.Drawing.Point(86, 344);
-            this.RLManagement.Name = "RLManagement";
-            this.RLManagement.Size = new System.Drawing.Size(165, 16);
-            this.RLManagement.TabIndex = 6;
-            this.RLManagement.TabStop = true;
-            this.RLManagement.Text = "Rubric Level Management";
-            this.RLManagement.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.RLManagement_LinkClicked);
             // 
             // AssComManage
             // 
@@ -139,20 +113,6 @@
             this.AssComManage.Text = "Assessment Component Management";
             this.AssComManage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.AssComManage_LinkClicked);
             // 
-            // RubManagement
-            // 
-            this.RubManagement.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.RubManagement.AutoSize = true;
-            this.RubManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RubManagement.LinkColor = System.Drawing.Color.MidnightBlue;
-            this.RubManagement.Location = new System.Drawing.Point(104, 297);
-            this.RubManagement.Name = "RubManagement";
-            this.RubManagement.Size = new System.Drawing.Size(129, 16);
-            this.RubManagement.TabIndex = 4;
-            this.RubManagement.TabStop = true;
-            this.RubManagement.Text = "Rubric Management";
-            this.RubManagement.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.RubManagement_LinkClicked);
-            // 
             // ASSMAnagement
             // 
             this.ASSMAnagement.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -166,20 +126,6 @@
             this.ASSMAnagement.TabStop = true;
             this.ASSMAnagement.Text = "Assessment Management";
             this.ASSMAnagement.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ASSMAnagement_LinkClicked);
-            // 
-            // CloManagement
-            // 
-            this.CloManagement.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CloManagement.AutoSize = true;
-            this.CloManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CloManagement.LinkColor = System.Drawing.Color.MidnightBlue;
-            this.CloManagement.Location = new System.Drawing.Point(113, 250);
-            this.CloManagement.Name = "CloManagement";
-            this.CloManagement.Size = new System.Drawing.Size(110, 16);
-            this.CloManagement.TabIndex = 2;
-            this.CloManagement.TabStop = true;
-            this.CloManagement.Text = "Clo Management";
-            this.CloManagement.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.CloManagement_LinkClicked);
             // 
             // StuResultManagement
             // 
@@ -209,6 +155,48 @@
             this.StuManagement.Text = "Student Management";
             this.StuManagement.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.StuManagement_LinkClicked);
             // 
+            // CloManagement
+            // 
+            this.CloManagement.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CloManagement.AutoSize = true;
+            this.CloManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CloManagement.LinkColor = System.Drawing.Color.MidnightBlue;
+            this.CloManagement.Location = new System.Drawing.Point(113, 250);
+            this.CloManagement.Name = "CloManagement";
+            this.CloManagement.Size = new System.Drawing.Size(110, 16);
+            this.CloManagement.TabIndex = 2;
+            this.CloManagement.TabStop = true;
+            this.CloManagement.Text = "Clo Management";
+            this.CloManagement.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.CloManagement_LinkClicked);
+            // 
+            // RubManagement
+            // 
+            this.RubManagement.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.RubManagement.AutoSize = true;
+            this.RubManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RubManagement.LinkColor = System.Drawing.Color.MidnightBlue;
+            this.RubManagement.Location = new System.Drawing.Point(104, 297);
+            this.RubManagement.Name = "RubManagement";
+            this.RubManagement.Size = new System.Drawing.Size(129, 16);
+            this.RubManagement.TabIndex = 4;
+            this.RubManagement.TabStop = true;
+            this.RubManagement.Text = "Rubric Management";
+            this.RubManagement.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.RubManagement_LinkClicked);
+            // 
+            // RLManagement
+            // 
+            this.RLManagement.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.RLManagement.AutoSize = true;
+            this.RLManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RLManagement.LinkColor = System.Drawing.Color.MidnightBlue;
+            this.RLManagement.Location = new System.Drawing.Point(86, 344);
+            this.RLManagement.Name = "RLManagement";
+            this.RLManagement.Size = new System.Drawing.Size(165, 16);
+            this.RLManagement.TabIndex = 6;
+            this.RLManagement.TabStop = true;
+            this.RLManagement.Text = "Rubric Level Management";
+            this.RLManagement.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.RLManagement_LinkClicked);
+            // 
             // GenerateCloReport
             // 
             this.GenerateCloReport.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -221,6 +209,20 @@
             this.GenerateCloReport.Text = "Generate Report CLO";
             this.GenerateCloReport.UseVisualStyleBackColor = false;
             this.GenerateCloReport.Click += new System.EventHandler(this.GenerateCloReport_Click);
+            // 
+            // StudentAttendence
+            // 
+            this.StudentAttendence.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.StudentAttendence.AutoSize = true;
+            this.StudentAttendence.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StudentAttendence.LinkColor = System.Drawing.Color.MidnightBlue;
+            this.StudentAttendence.Location = new System.Drawing.Point(65, 391);
+            this.StudentAttendence.Name = "StudentAttendence";
+            this.StudentAttendence.Size = new System.Drawing.Size(206, 16);
+            this.StudentAttendence.TabIndex = 8;
+            this.StudentAttendence.TabStop = true;
+            this.StudentAttendence.Text = "Student Attendence Management";
+            this.StudentAttendence.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.StudentAttendence_LinkClicked);
             // 
             // panel1
             // 
@@ -240,6 +242,19 @@
             this.pictureBox1.Size = new System.Drawing.Size(227, 180);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // AssessmentReport
+            // 
+            this.AssessmentReport.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AssessmentReport.BackColor = System.Drawing.Color.MidnightBlue;
+            this.AssessmentReport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.AssessmentReport.Location = new System.Drawing.Point(48, 476);
+            this.AssessmentReport.Name = "AssessmentReport";
+            this.AssessmentReport.Size = new System.Drawing.Size(241, 41);
+            this.AssessmentReport.TabIndex = 10;
+            this.AssessmentReport.Text = "Generate Report Assessment";
+            this.AssessmentReport.UseVisualStyleBackColor = false;
+            this.AssessmentReport.Click += new System.EventHandler(this.AssessmentReport_Click);
             // 
             // Home
             // 
@@ -272,5 +287,6 @@
         private System.Windows.Forms.Button GenerateCloReport;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button AssessmentReport;
     }
 }

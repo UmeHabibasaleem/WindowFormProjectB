@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace ProjectBLab
 {
+    /// <summary>
+    /// This class contain the Datamembers and Functions of the StudentAttendenceClass
+    /// </summary>
     class StudentAttendenceClass
     {
+        /// <summary>
+        ///  Datamemebers and the Getter Seter functions of Datamemebers.
+        /// </summary>
         private int AttendanceId;
         private int StudentId;
         private int AttendanceStatus;
@@ -51,12 +57,19 @@ namespace ProjectBLab
             }
         }
        
+        /// <summary>
+        /// Use to add the data in the StudentSelection comobox
+        /// </summary>
         public void addStudentname()
         {
             string query = "Select RegistrationNumber from Student";
             Connection C1 = new Connection();
             C1.NameForStudentList(query);
         }
+
+        /// <summary>
+        /// Use to add the data in the AttendenceDate comobox
+        /// </summary>
         public void AddAttendenceDate()
         {
             string query = "Select AttendanceDate from ClassAttendance";
@@ -64,6 +77,12 @@ namespace ProjectBLab
             C1.DateForAttendence(query);
         }
 
+        /// <summary>
+        /// Use to add the data in the Student attendence Table
+        /// </summary>
+        /// <param name="stuName"> Indicate the Name of the Student</param>
+        /// <param name="Attendence">Indicate the Attedance Date of the Attendance</param>
+        /// <param name="status">Indicate the Status of the StudentAttendence</param>
         public void ADD(string stuName, string Attendence, string status)
         {
             Connection C1 = new Connection();
@@ -94,6 +113,10 @@ namespace ProjectBLab
                 C1.Insertion(Insertquery);
             }
         }
+
+        /// <summary>
+        /// Use to get the record of the Strudent Attendence
+        /// </summary>
         public void Record()
         {
             string query = "SELECT * FROM StudentAttendance";
@@ -101,6 +124,12 @@ namespace ProjectBLab
             C1.StudentAttendenceRecord(query);
 
         }
+
+        /// <summary>
+        /// Use to delete the data
+        /// </summary>
+        /// <param name="id">Indicate studentId</param>
+        /// <param name="Assid">Indicate the AttendanceId</param>
         public void Delete(int id, int Assid)
         {
             string query = "Delete FROM StudentAttendance where StudentId = " + id + " and AttendanceId = " + Assid;
@@ -108,7 +137,11 @@ namespace ProjectBLab
             C1.Deletion(query);
         }
        
-       
+        /// <summary>
+        /// Use to get the Registration Number for the student againt id
+        /// </summary>
+        /// <param name="id">Indicate the StudentId</param>
+        /// <returns>Retun the registration number</returns>
         public string RegistrationNoStudent(int id)
         {
             string result;
@@ -117,6 +150,12 @@ namespace ProjectBLab
             result = C1.Cloname(query);
             return result;
         }
+
+        /// <summary>
+        /// Use to get the Attendance date feom ClassAttendance
+        /// </summary>
+        /// <param name="id">Indicate the AttendanceID</param>
+        /// <returns>Return the AttendanceDate</returns>
         public string AttendenceDate(int id)
         {
             string result;
@@ -125,6 +164,12 @@ namespace ProjectBLab
             result = C1.Cloname(query);
             return result;
         }
+
+        /// <summary>
+        /// Use to find the string againt statusId
+        /// </summary>
+        /// <param name="id">indicate the StatusId</param>
+        /// <returns>Return the Name of status</returns>
         public string Staus(int id)
         {
             string status = "";
@@ -146,6 +191,15 @@ namespace ProjectBLab
             }
             return status;
         }
+
+        /// <summary>
+        /// Use to update the data aginst the id 
+        /// </summary>
+        /// <param name="stid">Indicate studentId</param>
+        /// <param name="AttendenceId">Indicate AttendanceId</param>
+        /// <param name="stuName">Indicate StudentName</param>
+        /// <param name="AttendenceDate">Indicate AttendanceDate</param>
+        /// <param name="status">Indicate the Status</param>
         public void Edit(int stid, int AttendenceId,string stuName,string AttendenceDate, string status)
         {
             Connection C1 = new Connection();

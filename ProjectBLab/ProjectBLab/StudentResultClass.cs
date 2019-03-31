@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace ProjectBLab
 {
+    /// <summary>
+    ///  This class contain the Datamembers and Functions related to the StudentResult
+    /// </summary>
     class StudentResultClass
     {
+        /// <summary>
+        ///  Datamemebers and the Getter Seter functions of Datamemebers.
+        /// </summary>
         private int StudentId;
         private int AssessmentComId;
         private int RubricMeasurement;
@@ -64,6 +70,9 @@ namespace ProjectBLab
                 EvaluationDate = value;
             }
         }
+        /// <summary>
+        /// This function use for putting the data of Details of Robric in comobox 
+        /// </summary>
         public void addRubricname()
         {
             string query = "Select Details from RubricLevel";
@@ -71,6 +80,10 @@ namespace ProjectBLab
             C1.nameForcomoboxList(query);
         }
 
+        /// <summary>
+        /// This function use for putting the data in Details of the comobox of Rubric
+        /// </summary>
+        /// <param name="Assvalue">Indicate the Title of the Asseeement in order to get the name of student Assessmentcomponent</param>
         public void addAssessmentname(string Assvalue)
         {
             Connection C1 = new Connection();
@@ -80,18 +93,34 @@ namespace ProjectBLab
             
             C1.NameForAssementComList(query2);
         }
+
+        /// <summary>
+        /// Add the name of the student  in studentList
+        /// </summary>
         public void addStudentname()
         {
             string query = "Select RegistrationNumber from Student";
             Connection C1 = new Connection();
             C1.NameForStudentList(query);
         }
+
+        /// <summary>
+        /// Add the Assessment Title in Assessment comobox
+        /// </summary>
         public void AddASSname()
         {
             string query = "Select Title from Assessment";
             Connection C1 = new Connection();
             C1.TitleForAssesssment(query);
         }
+
+        /// <summary>
+        /// This function used to add the Result of the student in student Result Record
+        /// </summary>
+        /// <param name="stuName">Indicate the name of the student</param>
+        /// <param name="AssTitle">Indicate the Assessment title of the student</param>
+        /// <param name="RLD">Indicate the RubruicLevel</param>
+        /// <param name="EvaluatedDate">Indicate the evaluation date</param>
         public void ADD(string stuName, string AssTitle, string RLD, DateTime EvaluatedDate)
         {
             Connection C1 = new Connection();
@@ -107,6 +136,10 @@ namespace ProjectBLab
                 C1.Insertion(Insertquery);
             }
         }
+
+        /// <summary>
+        /// This function used in order to get the data from the studentResult
+        /// </summary>
         public void Record()
         {
             string query = "SELECT * FROM StudentResult";
@@ -114,12 +147,24 @@ namespace ProjectBLab
             C1.StudentResultRecord(query);
 
         }
+
+        /// <summary>
+        /// This function used to delete the data from the StudentResult
+        /// </summary>
+        /// <param name="id">Indicate the Id of the student</param>
+        /// <param name="Assid">Indicate the AssessmentComponentId</param>
         public void Delete(int id,int Assid)
         {
             string query = "Delete FROM StudentResult where StudentId = " + id + " and AssessmentComponentId = " +Assid ;
             Connection C1 = new Connection();
             C1.Deletion(query);
         }
+
+        /// <summary>
+        /// This function is used to get the Name of the AssessmentComponent 
+        /// </summary>
+        /// <param name="id">Indicate the Id of the AssessmentComponent </param>
+        /// <returns>it return the name of the assessmentComponent</returns>
         public string NameofASSComId(int id)
         {
             string result;
@@ -128,6 +173,12 @@ namespace ProjectBLab
             result = C1.Cloname(query);
             return result;
         }
+
+        /// <summary>
+        /// USed for the name od Assessment Id
+        /// </summary>
+        /// <param name="id">Indicate the AssessmentComponentId</param>
+        /// <returns>Return the Title of the Assessment</returns>
         public string NameofASSId(int id)
         {
             string result,result1;
@@ -140,6 +191,12 @@ namespace ProjectBLab
             result1 = C1.Cloname(query1);
             return result1;
         }
+
+        /// <summary>
+        /// Used to get the RegistrationNumber of the student
+        /// </summary>
+        /// <param name="id">Indicate the id of the student</param>
+        /// <returns>Return the RegistrationNumber of the student</returns>
         public string RegistrationNoStudent(int id)
         {
             string result;
@@ -148,6 +205,12 @@ namespace ProjectBLab
             result = C1.Cloname(query);
             return result;
         }
+
+        /// <summary>
+        /// This function used to get the details of the RubricLevel
+        /// </summary>
+        /// <param name="id"> Indicate the id of the RubricLevel</param>
+        /// <returns>Return the Details of the RubricLevel</returns>
         public string NameofRubricId(int id)
         {
             string result;
@@ -156,6 +219,16 @@ namespace ProjectBLab
             result = C1.Cloname(query);
             return result;
         }
+
+        /// <summary>
+        /// This function used to Edit the Result of the student in student Result Record
+        /// </summary>
+        /// <param name="assid">Indicate the assessmentId</param>
+        /// <param name="stuid">Indicate the Astudent Id</param>
+        /// <param name="stuName">Indicate the name of the student</param>
+        /// <param name="AssTitle">Indicate the Assessment title of the student</param>
+        /// <param name="RLD">Indicate the RubruicLevel</param>
+        /// <param name="EvaluatedDate">Indicate the evaluation date</param>
         public void Edit(int stuid, int assid,string stuName, string AssTitle, string RLD, DateTime EvaluatedDate)
         {
             Connection C1 = new Connection();
