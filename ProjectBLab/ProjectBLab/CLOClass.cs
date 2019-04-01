@@ -83,7 +83,6 @@ namespace ProjectBLab
 
             string Insertquery = "Insert into Clo (Name, DateCreated, DateUpdated) VALUES('" + name + "','" + Datecreated + "','" + DateUpdated +  "')";
             Connection C1 = new Connection();
-            MessageBox.Show("inthe class of Clo");
             C1.Insertion(Insertquery);
 
         }

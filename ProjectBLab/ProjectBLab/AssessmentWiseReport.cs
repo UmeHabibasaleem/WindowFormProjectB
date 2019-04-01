@@ -20,7 +20,7 @@ namespace ProjectBLab
         private void GeneratePdf_Click(object sender, EventArgs e)
         {
             GenerateReport gr = new GenerateReport();
-            gr.PDF(ASSWiseReport, "CloReport", "Assessment wise Report");
+            gr.PDF(ASSWiseReport, "AssWiseReport", "Assessment wise Report");
         }
 
         private void ASSWiseReport_CellContentClick(object sender, DataGridViewCellEventArgs e)

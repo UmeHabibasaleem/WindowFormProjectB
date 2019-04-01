@@ -153,6 +153,7 @@ namespace ProjectBLab
             Connection C1 = new Connection();
             string query2 = "Delete FROM AssessmentComponent where Id = " + id;
             C1.Deletion(query2);
+           
         }
         /// <summary>
         /// This Function Create a query to Edit the AssesssmentComponent in the DataBase storage through Edit function.

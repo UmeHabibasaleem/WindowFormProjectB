@@ -78,6 +78,7 @@ namespace ProjectBLab
                 if (result.Equals(DialogResult.OK))
                 {
                     ASS.Delete(id);
+                    MessageBox.Show("Data has deen Deleted successfully");
                     AssessmentRecord.DataSource = null;
                     Assessment_Load(sender, e);
                     if (ADD.Visible == false)
@@ -118,22 +119,32 @@ namespace ProjectBLab
 
         private void ADD_Click(object sender, EventArgs e)
         {
-            AssessmentClass Ass = new AssessmentClass();
-            if (Title.Text != "" && Totalweightage.Text != "" && TotalMarks.Text != "" )
+            try
             {
-                Ass.ADD_Asses(Title.Text, Convert.ToInt32(TotalMarks.Text), Convert.ToInt32(Totalweightage.Text), DateCreated.Value);
-                Title.Text = " ";
-                TotalMarks.Text = " ";
-                Totalweightage.Text = " ";
-                DateCreated.ResetText();
-                AssessmentRecord.DataSource = null;
-                Assessment_Load(sender, e);
-            }
-            else
-            {
-                MessageBox.Show("Must fill all the fields in order to proceed");
+                AssessmentClass Ass = new AssessmentClass();
+                if (Title.Text != "" && Totalweightage.Text != "" && TotalMarks.Text != "")
+                {
+                    Ass.ADD_Asses(Title.Text, Convert.ToInt32(TotalMarks.Text), Convert.ToInt32(Totalweightage.Text), DateCreated.Value);
+                    MessageBox.Show("Data has been added successfully");
+                    Title.Text = " ";
+                    TotalMarks.Text = " ";
+                    Totalweightage.Text = " ";
+                    DateCreated.ResetText();
+                    AssessmentRecord.DataSource = null;
+                    Assessment_Load(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Must fill all the fields in order to proceed");
 
+                }
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Fail to add the data please try again with valid values");
+                return;
+            }
+            
         }
 
         private void Assessment_Load(object sender, EventArgs e)

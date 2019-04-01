@@ -31,6 +31,7 @@ namespace ProjectBLab
                 if (result.Equals(DialogResult.OK))
                 {
                     CA.Delete(id);
+                    MessageBox.Show("Data has been deleted successfully");
                     Attendence_Load(sender, e);
                     MessageBox.Show("id of the selested row is" + id);
                 }
@@ -62,11 +63,19 @@ namespace ProjectBLab
 
         private void ADD_Click(object sender, EventArgs e)
         {
-
-            ClassAttendence CA = new ClassAttendence();
-            CA.ADDAttendence(AttendenceDatepicker.Value);
-            AttendenceDatepicker.ResetText();
-            Attendence_Load(sender, e);
+          try
+          {
+                ClassAttendence CA = new ClassAttendence();
+                CA.ADDAttendence(AttendenceDatepicker.Value);
+                MessageBox.Show("Data has been added successfully");
+                AttendenceDatepicker.ResetText();
+                Attendence_Load(sender, e);
+          }
+            catch(Exception ex)
+            {
+                MessageBox.Show("please enter valid data,Dat insert fail");
+            }
+            
         }
 
         private void Save_Click(object sender, EventArgs e)

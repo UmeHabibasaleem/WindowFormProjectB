@@ -128,7 +128,6 @@ namespace ProjectBLab
 
             string Insertquery = "Insert into student (FirstName, LastName, Contact,Email,RegistrationNumber,Status) VALUES('" + firstname + "','" + lastname + "','" + contact + "','" + email + "','" + RegistrationNo + "','" + status + "')";
             Connection C1 = new Connection();
-            MessageBox.Show("inthe class of student");
             C1.Insertion(Insertquery);
           
         }
@@ -156,6 +155,7 @@ namespace ProjectBLab
             C1.Deletion(query2);
             string query1 = "Delete FROM student where Id = " + id ;
             C1.Deletion(query1);
+            MessageBox.Show("Data has been deleted successfully");
         }
         /// <summary>
         /// This Function used to edit the student in the record of students in database by usning Update function
@@ -172,6 +172,17 @@ namespace ProjectBLab
             string query = "UPDATE student SET  FirstName = '" + firstname + "', Lastname = '" + lastname + "', Contact = '" + contact + "', Email = '" + email + "', RegistrationNumber = '" + RegistrationNo  + "', Status = '" + status + "' where Id = " + id;
             Connection C1 = new Connection();
             C1.UPdate(query);
+        }
+        public bool Check(string RegNo)
+        {
+            bool check = true;
+            string query = "Select count(*) From Student where RegistrationNumber = '" + RegNo + "'";
+            Connection C1 = new Connection();
+            if(C1.IsExist(query)> 0)
+            {
+                check = false;
+            }
+            return check;
         }
     }
 }

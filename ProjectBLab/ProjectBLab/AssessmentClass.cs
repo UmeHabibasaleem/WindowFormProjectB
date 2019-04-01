@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ProjectBLab
 {
@@ -94,11 +95,9 @@ namespace ProjectBLab
         /// <param name="DateCreated">Used to specify Datecreated of Assessment.</param>
         public void ADD_Asses(string Title, int totalmarks, int totalweightage, DateTime Datecreated)
         {
-
             string Insertquery = "Insert into Assessment (Title, DateCreated, TotalMarks, TotalWeightage) VALUES('" + Title + "','" + Datecreated + "','" + totalmarks + "','" + totalweightage + "')";
             Connection C1 = new Connection();
             C1.Insertion(Insertquery);
-
         }
         /// <summary>
         /// This Function Create a query to get all the stored data of  the Assesssment in the DataBase storage through ShowASSRecord function.
@@ -122,8 +121,8 @@ namespace ProjectBLab
            string query1 = "Delete FROM AssessmentComponent where Id = " + AssessmentId;
            C1.Deletion(query1); 
            string query2 = "Delete FROM Assessment where Id = " + id;
-           
            C1.Deletion(query2);
+            MessageBox.Show("Data Has been deleted successfully");
         }
         /// <summary>
         /// This Function Create a query to Update the Assesssment in the DataBase storage through Edit function.

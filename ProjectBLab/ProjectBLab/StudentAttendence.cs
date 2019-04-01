@@ -85,6 +85,7 @@ namespace ProjectBLab
                 if (result.Equals(DialogResult.OK))
                 {
                     STR.Delete( ASSid, STUid);
+                    MessageBox.Show("Data has been deleted successfully");
                     StudentAttendenceRecord.DataSource = null;
                     StudentAttendence_Load(sender, e);
                     if (ADD.Visible == false)
@@ -118,16 +119,23 @@ namespace ProjectBLab
 
         private void ADD_Click(object sender, EventArgs e)
         {
-            StudentAttendenceClass SR = new StudentAttendenceClass();
-            string status = AttendenceAtatus.GetItemText(AttendenceAtatus.SelectedItem);
-            string Attendence = AttendencedateComobox.GetItemText(AttendencedateComobox.SelectedItem);
-            string student = StudentName1.GetItemText(StudentName1.SelectedItem);
-            SR.ADD(student, Attendence, status);
-            StudentAttendenceRecord.DataSource = null;
-            AttendenceAtatus.Text = "";
-            AttendencedateComobox.Text = "";
-            StudentName1.Text = "";
-            StudentAttendence_Load(sender,e);
+            if (AttendenceAtatus.Text != "" && AttendencedateComobox.Text != "" && StudentName1.Text != "")
+                {
+                    StudentAttendenceClass SR = new StudentAttendenceClass();
+                    string status = AttendenceAtatus.Text;
+                    string Attendence = AttendencedateComobox.Text;
+                    string student = StudentName1.Text;
+                    SR.ADD(student, Attendence, status);
+                    StudentAttendenceRecord.DataSource = null;
+                    AttendenceAtatus.Text = "";
+                    AttendencedateComobox.Text = "";
+                    StudentName1.Text = "";
+                    StudentAttendence_Load(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Please fill all the fields to further proceed");
+                }
         }
 
         private void Save_Click(object sender, EventArgs e)

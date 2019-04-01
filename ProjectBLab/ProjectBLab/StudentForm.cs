@@ -116,68 +116,110 @@ namespace ProjectBLab
         }
 
         private void RegistrationNumber_TextChanged(object sender, EventArgs e)
-        {
+       {
 
         }
 
         private void ADD_Click(object sender, EventArgs e)
         {
-            StudentClass Stu = new StudentClass();
-            int temp = 0;
-            if (IsValidEmail(Email.Text) == false)
+            try
             {
-
-                Email.Text = " ";
-                Email_TextChanged(sender, e);
-            }
-            else
-            {
-                
-                if(Active.Checked == true)
+                if (FirstName.Text != "" && Email.Text != "" && RegistrationNumber.Text != "")
                 {
-                    temp = 5;
-                }
-                if(InActive.Checked == true)
-                { temp = 6; }
-                Stu.ADD_student(FirstName.Text, LastName.Text, Contact.Text, Email.Text, RegistrationNumber.Text,temp);
-                FirstName.Text = " ";
-                LastName.Text = " ";
-                Contact.Text = " ";
-                Email.Text = " ";
-                RegistrationNumber.Text = " ";
-                StudentForm_Load(sender, e);
+                    StudentClass Stu = new StudentClass();
+                    int temp = 0;
+                    if (IsValidEmail(Email.Text) == false)
+                    {
 
+                        Email.Text = " ";
+                        MessageBox.Show("please enter Valid Email Address");
+                        Email_TextChanged(sender, e);
+                    }
+                    if (Contact.Text.Length > 11 || Contact.Text.Length < 9)
+                    {
+                        Contact.Text = " ";
+                        MessageBox.Show("Please enter valid Contact Number");
+                        Contact_TextChanged(sender, e);
+                    }
+                    else
+                    {
+
+                        if (Active.Checked == true)
+                        {
+                            temp = 5;
+                        }
+                        if (InActive.Checked == true)
+                        { temp = 6; }
+                        if(Stu.Check(RegistrationNumber.Text.Trim()))
+                        {
+                            Stu.ADD_student(FirstName.Text.Trim(), LastName.Text.Trim(), Contact.Text.Trim(), Email.Text.Trim(), RegistrationNumber.Text.Trim(), temp);
+                            FirstName.Text = " ";
+                            LastName.Text = " ";
+                            Contact.Text = " ";
+                            Email.Text = " ";
+                            RegistrationNumber.Text = " ";
+                            StudentForm_Load(sender, e);
+                            MessageBox.Show("Data inserted Successfully");
+                        }
+                        else
+                        {
+                            MessageBox.Show("This registration Number already Exit");
+                            RegistrationNumber.Text = " ";
+                            RegistrationNumber_TextChanged(sender, e);
+
+                        }
+                        
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("FirstName ,Email,RegistrationNumber,Status are required fields.please fill these fields");
+                }
+           }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data Can't be added,please fill valid and new data");
+                return;
             }
+
+
         }
 
         private void Save_Click(object sender, EventArgs e)
         {
-            int temp = 0;
-            StudentClass Stu = new StudentClass();
-            if (IsValidEmail(Email.Text) == false)
+            try
             {
-                MessageBox.Show("input should be in email format");
-                Email.Text = " ";
-                Email_TextChanged(sender, e);
-            }
-            else
-            {
-                if (Active.Checked == true)
+                int temp = 0;
+                StudentClass Stu = new StudentClass();
+                if (IsValidEmail(Email.Text) == false)
                 {
-                    temp = 5;
+                    MessageBox.Show("input should be in email format");
+                    Email.Text = " ";
+                    Email_TextChanged(sender, e);
                 }
-                if (InActive.Checked == true)
-                { temp = 6; }
-                Stu.Edit(globalindex, FirstName.Text, LastName.Text, Contact.Text, Email.Text, RegistrationNumber.Text, temp);
-                FirstName.Text = " ";
-                LastName.Text = " ";
-                Contact.Text = " ";
-                Email.Text = " ";
-                RegistrationNumber.Text = " ";
-                StudentRecord.DataSource = null;
-                StudentForm_Load(sender, e);
-
+                else
+                {
+                    if (Active.Checked == true)
+                    {
+                        temp = 5;
+                    }
+                    if (InActive.Checked == true)
+                    { temp = 6; }
+                    Stu.Edit(globalindex, FirstName.Text, LastName.Text, Contact.Text, Email.Text, RegistrationNumber.Text, temp);
+                    FirstName.Text = " ";
+                    LastName.Text = " ";
+                    Contact.Text = " ";
+                    Email.Text = " ";
+                    RegistrationNumber.Text = " ";
+                    StudentRecord.DataSource = null;
+                    StudentForm_Load(sender, e);
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Data can,t Update,please enter valid data");
+                return;
             }
+           
         }
 
         private void StudentRecord_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -189,13 +231,13 @@ namespace ProjectBLab
             int id = Convert.ToInt32(r.Cells[0].Value);
             if (StudentRecord.Columns[e.ColumnIndex].Name == "Delete")
             {
-                DialogResult result = MessageBox.Show("Do You Want to delete?" + id, "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                DialogResult result = MessageBox.Show("Do You Want to delete adainst id ?" + id, "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (result.Equals(DialogResult.OK))
                 {
                     sc.Delete(id);
                     StudentRecord.DataSource = null;
                     StudentForm_Load(sender, e);
-                    MessageBox.Show("id of the selested row is" + id);
+                  
                 }
                 else
                 {

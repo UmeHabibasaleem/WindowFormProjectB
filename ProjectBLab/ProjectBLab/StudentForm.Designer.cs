@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Save = new System.Windows.Forms.Button();
             this.ADD = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.Home = new System.Windows.Forms.LinkLabel();
             this.LastName = new System.Windows.Forms.TextBox();
             this.Email = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -48,11 +47,11 @@
             this.RegistrationNumber = new System.Windows.Forms.TextBox();
             this.FirstName = new System.Windows.Forms.TextBox();
             this.StudentRecord = new System.Windows.Forms.DataGridView();
+            this.studentClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Status = new System.Windows.Forms.GroupBox();
             this.InActive = new System.Windows.Forms.RadioButton();
             this.Active = new System.Windows.Forms.RadioButton();
-            this.Home = new System.Windows.Forms.LinkLabel();
             this.id1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,30 +59,15 @@
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.registrationNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StudentRecord)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentClassBindingSource)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.Status.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.studentClassBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Delete
-            // 
-            this.Delete.DataPropertyName = "Id1";
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
-            // 
-            // Edit
-            // 
-            this.Edit.DataPropertyName = "Id1";
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.Text = "Edit";
-            this.Edit.UseColumnTextForButtonValue = true;
             // 
             // Save
             // 
@@ -135,6 +119,21 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(778, 54);
             this.tableLayoutPanel3.TabIndex = 24;
+            // 
+            // Home
+            // 
+            this.Home.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.Home.AutoSize = true;
+            this.Home.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Home.LinkColor = System.Drawing.Color.MidnightBlue;
+            this.Home.Location = new System.Drawing.Point(517, 12);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(104, 29);
+            this.Home.TabIndex = 25;
+            this.Home.TabStop = true;
+            this.Home.Text = "Home";
+            this.Home.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Home_LinkClicked);
             // 
             // LastName
             // 
@@ -309,6 +308,10 @@
             this.StudentRecord.Tag = "Delete";
             this.StudentRecord.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.StudentRecord_CellContentClick);
             // 
+            // studentClassBindingSource
+            // 
+            this.studentClassBindingSource.DataSource = typeof(ProjectBLab.StudentClass);
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -376,25 +379,10 @@
             this.Active.UseVisualStyleBackColor = true;
             this.Active.CheckedChanged += new System.EventHandler(this.Active_CheckedChanged);
             // 
-            // Home
-            // 
-            this.Home.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Home.AutoSize = true;
-            this.Home.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Home.LinkColor = System.Drawing.Color.MidnightBlue;
-            this.Home.Location = new System.Drawing.Point(517, 12);
-            this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(104, 29);
-            this.Home.TabIndex = 25;
-            this.Home.TabStop = true;
-            this.Home.Text = "Home";
-            this.Home.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Home_LinkClicked);
-            // 
             // id1DataGridViewTextBoxColumn
             // 
             this.id1DataGridViewTextBoxColumn.DataPropertyName = "Id1";
-            this.id1DataGridViewTextBoxColumn.HeaderText = "Id1";
+            this.id1DataGridViewTextBoxColumn.HeaderText = "Id";
             this.id1DataGridViewTextBoxColumn.Name = "id1DataGridViewTextBoxColumn";
             // 
             // firstNameDataGridViewTextBoxColumn
@@ -433,9 +421,21 @@
             this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             // 
-            // studentClassBindingSource
+            // Delete
             // 
-            this.studentClassBindingSource.DataSource = typeof(ProjectBLab.StudentClass);
+            this.Delete.DataPropertyName = "Id1";
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
+            // 
+            // Edit
+            // 
+            this.Edit.DataPropertyName = "Id1";
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForButtonValue = true;
             // 
             // StudentForm
             // 
@@ -455,29 +455,20 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StudentRecord)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentClassBindingSource)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.Status.ResumeLayout(false);
             this.Status.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.studentClassBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridViewTextBoxColumn contactDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn registrationNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
-        private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource studentClassBindingSource;
         private System.Windows.Forms.Button Save;
         private System.Windows.Forms.Button ADD;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox LastName;
         private System.Windows.Forms.TextBox Email;
         private System.Windows.Forms.Label label8;
@@ -492,11 +483,19 @@
         private System.Windows.Forms.TextBox RegistrationNumber;
         private System.Windows.Forms.TextBox FirstName;
         private System.Windows.Forms.DataGridView StudentRecord;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id1DataGridViewTextBoxColumn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.GroupBox Status;
         private System.Windows.Forms.RadioButton InActive;
         private System.Windows.Forms.RadioButton Active;
         private System.Windows.Forms.LinkLabel Home;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contactDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn registrationNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
     }
 }

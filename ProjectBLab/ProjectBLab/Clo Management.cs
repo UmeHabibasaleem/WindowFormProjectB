@@ -44,25 +44,29 @@ namespace ProjectBLab
 
         private void Add_Click(object sender, EventArgs e)
         {
-            if (CloName.Text == " ")
+            if (CloName.Text == "")
             {
                 MessageBox.Show("Must fill the Name attribute");
                 CloName_TextChanged(sender, e);
+                return;
             }
             if (DateCreated.Value == null)
             {
                 MessageBox.Show("Must select the date for Datecreated");
                 DateCreated_ValueChanged(sender, e);
+                return;
             }
             if (DateUpdated.Value == null)
             {
                 MessageBox.Show("Must select the date for DateUpdated");
                 DateUpdated_ValueChanged(sender, e);
+                return;
             }
             else
             {
                 CLOClass clo1 = new CLOClass();
-                clo1.ADD_Clo(CloName.Text, DateCreated.Value, DateUpdated.Value);
+                clo1.ADD_Clo(CloName.Text.Trim(), DateCreated.Value, DateUpdated.Value);
+                MessageBox.Show("Data has been added successfully");
                 CloName.Text = " ";
                 DateCreated.ResetText();
                 DateUpdated.ResetText();
@@ -78,7 +82,6 @@ namespace ProjectBLab
             {
                 MessageBox.Show("Must fill the Name");
                 CloName_TextChanged(sender, e);
-                
             }
             else
             {
@@ -103,8 +106,8 @@ namespace ProjectBLab
                 if (result.Equals(DialogResult.OK))
                 {
                     sc.Delete(id);
+                    MessageBox.Show("Data hes been deleted successfully");
                     Clo_Management_Load_1(sender, e);
-                    MessageBox.Show("id of the selested row is" + id);
                 }
                 else
                 {
@@ -113,7 +116,7 @@ namespace ProjectBLab
             }
             if (ClodataGridView.Columns[e.ColumnIndex].Name == "Edit")
             {
-                CloName.Text = r.Cells[1].Value.ToString();
+                CloName.Text = r.Cells[1].Value.ToString().Trim();
                 DateCreated.Value= Convert.ToDateTime(r.Cells[2].Value);
                 DateUpdated.Value = Convert.ToDateTime(r.Cells[3].Value);
                 globalindex2 = id;

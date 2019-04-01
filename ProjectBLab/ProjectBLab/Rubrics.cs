@@ -65,8 +65,9 @@ namespace ProjectBLab
             }
             else
             {
-                string clo = Closelection.GetItemText(Closelection.SelectedItem);
-                rub.ADD_Rubric(Details.Text, clo);
+                string clo = Closelection.Text.Trim();
+                rub.ADD_Rubric(Details.Text.Trim(), clo);
+                MessageBox.Show("Data has deen added successfully");
                 RubricsDetail.DataSource = null;
                 Details.Text = " ";
                 Closelection.Text = " ";
@@ -95,6 +96,7 @@ namespace ProjectBLab
                 if (result.Equals(DialogResult.OK))
                 {
                     Rub.Delete(id);
+                    MessageBox.Show("Data has been deleted successfylly");
                     RubricsDetail.DataSource = null;
                     Details.Text = " ";
                     Closelection.SelectedText = " ";
@@ -127,7 +129,7 @@ namespace ProjectBLab
         private void Save_Click(object sender, EventArgs e)
         {
             RubricsClass Rub = new RubricsClass();
-            Rub.Edit(globalindex, Details.Text, Closelection.Text);
+            Rub.Edit(globalindex, Details.Text.Trim(), Closelection.Text);
             RubricsDetail.DataSource = null;
             My_Own_Load();
             Details.Text = " ";

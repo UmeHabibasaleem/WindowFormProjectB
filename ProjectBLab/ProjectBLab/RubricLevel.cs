@@ -91,61 +91,23 @@ namespace ProjectBLab
             }
         }
 
-        private void MeasureLevel1_TextChanged(object sender, EventArgs e)
-        {
-            int i = Integercheck(MeasureLevel1.Text);
-            if (i > 0)
-            {
-                MessageBox.Show("only numeric value allow");
-                MeasureLevel1.Text = "";
-            }
-
-        }
-
-        private void MeasureLevel2_TextChanged(object sender, EventArgs e)
-        {
-            int i = Integercheck(MeasureLevel2.Text);
-            if (i > 0)
-            {
-                MessageBox.Show("only numeric value allow");
-                MeasureLevel2.Text = "";
-            }
-        }
-
-        private void MeasureLevel3_TextChanged(object sender, EventArgs e)
-        {
-            int i = Integercheck(MeasureLevel3.Text);
-            if (i > 0)
-            {
-                MessageBox.Show("only numeric value allow");
-                MeasureLevel3.Text = "";
-            }
-        }
-
-        private void MeasureLevel4_TextChanged(object sender, EventArgs e)
-        {
-            int i = Integercheck(MeasureLevel4.Text);
-            if (i > 0)
-            {
-                MessageBox.Show("only numeric value allow");
-                MeasureLevel4.Text = "";
-            }
-        }
+       
 
         private void Add_Click(object sender, EventArgs e)
         {
-            if (Datails1.Text != "" &&  MeasureLevel1.Text != "" && Details2.Text != "" && MeasureLevel2.Text != "" && Datails3.Text != "" && MeasureLevel3.Text != "" && Datails4.Text != "" && MeasureLevel4.Text != "")
+            if (Datails1.Text != "" && MeasurementcomboBox1.Text != "" && Details2.Text != "" && MeasurementcomboBox2.Text != "" && Datails3.Text != "" && MeasurementcomboBox3.Text != "" && Datails4.Text != "" && MeasurementcomboBox4.Text != "")
             {
                 RubricLevelClass RL = new RubricLevelClass();
-                RL.ADD_RubricL(Datails1.Text, MeasureLevel1.Text, Details2.Text, MeasureLevel2.Text, Datails3.Text, MeasureLevel3.Text, Datails4.Text, MeasureLevel4.Text, Rubricselection.Text);
+                RL.ADD_RubricL(Datails1.Text.Trim(), MeasurementcomboBox1.Text.Trim(), Details2.Text.Trim(), MeasurementcomboBox2.Text.Trim(), Datails3.Text.Trim(), MeasurementcomboBox3.Text.Trim(), Datails4.Text.Trim(), MeasurementcomboBox4.Text.Trim(), Rubricselection.Text);
+                MessageBox.Show("Data has been addes successfully");
                 Datails1.Text = "";
-                MeasureLevel1.Text = "";
+                MeasurementcomboBox1.Text = "";
                 Details2.Text = "";
-                MeasureLevel2.Text = "";
+                MeasurementcomboBox2.Text = "";
                 Datails3.Text = "";
-                MeasureLevel3.Text = "";
+                MeasurementcomboBox3.Text = "";
                 Datails4.Text = "";
-                MeasureLevel4.Text = "";
+                MeasurementcomboBox4.Text = "";
                 Rubricselection.Text = "";
             }
             else
@@ -176,6 +138,11 @@ namespace ProjectBLab
         }
 
         private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void MeasurementcomboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

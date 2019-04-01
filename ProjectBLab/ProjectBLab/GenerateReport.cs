@@ -129,7 +129,7 @@ namespace ProjectBLab
             {
                 BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
                 PdfPTable pdftable = new PdfPTable(data.Columns.Count);
-                pdftable.PaddingTop = 10;
+                pdftable.SpacingBefore = 15f;
                 pdftable.DefaultCell.Padding = 3;
                 pdftable.HorizontalAlignment = Element.ALIGN_CENTER;
                 pdftable.DefaultCell.BorderWidth = 1;
@@ -158,7 +158,7 @@ namespace ProjectBLab
                         PdfWriter.GetInstance(pdfdoc, stream);
                         pdfdoc.Open();
                         Paragraph p1 = new Paragraph(Heading);
-                        p1.Alignment = Element.ALIGN_TOP;
+                        p1.Alignment = Element.ALIGN_CENTER;
                         p1.PaddingTop = 10;
                         pdfdoc.Add(p1);
                         pdfdoc.Add(pdftable);

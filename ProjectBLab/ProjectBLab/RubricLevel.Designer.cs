@@ -37,10 +37,6 @@
             this.cloBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label13 = new System.Windows.Forms.Label();
-            this.MeasureLevel1 = new System.Windows.Forms.TextBox();
-            this.MeasureLevel2 = new System.Windows.Forms.TextBox();
-            this.MeasureLevel3 = new System.Windows.Forms.TextBox();
-            this.MeasureLevel4 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -72,6 +68,10 @@
             this.rubricsClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.rubricTableAdapter = new ProjectBLab.ProjectBDataSet2TableAdapters.RubricTableAdapter();
+            this.MeasurementcomboBox1 = new System.Windows.Forms.ComboBox();
+            this.MeasurementcomboBox2 = new System.Windows.Forms.ComboBox();
+            this.MeasurementcomboBox3 = new System.Windows.Forms.ComboBox();
+            this.MeasurementcomboBox4 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cloBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet)).BeginInit();
@@ -129,10 +129,6 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.06274F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.214072F));
             this.tableLayoutPanel2.Controls.Add(this.label13, 2, 3);
-            this.tableLayoutPanel2.Controls.Add(this.MeasureLevel1, 5, 0);
-            this.tableLayoutPanel2.Controls.Add(this.MeasureLevel2, 5, 1);
-            this.tableLayoutPanel2.Controls.Add(this.MeasureLevel3, 5, 2);
-            this.tableLayoutPanel2.Controls.Add(this.MeasureLevel4, 5, 3);
             this.tableLayoutPanel2.Controls.Add(this.label6, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.label7, 4, 1);
             this.tableLayoutPanel2.Controls.Add(this.label3, 4, 2);
@@ -148,6 +144,10 @@
             this.tableLayoutPanel2.Controls.Add(this.label5, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label8, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.label11, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.MeasurementcomboBox1, 5, 0);
+            this.tableLayoutPanel2.Controls.Add(this.MeasurementcomboBox2, 5, 1);
+            this.tableLayoutPanel2.Controls.Add(this.MeasurementcomboBox3, 5, 2);
+            this.tableLayoutPanel2.Controls.Add(this.MeasurementcomboBox4, 5, 3);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 129);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
@@ -169,46 +169,6 @@
             this.label13.Size = new System.Drawing.Size(57, 16);
             this.label13.TabIndex = 34;
             this.label13.Text = "Details";
-            // 
-            // MeasureLevel1
-            // 
-            this.MeasureLevel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.MeasureLevel1.Location = new System.Drawing.Point(705, 13);
-            this.MeasureLevel1.Multiline = true;
-            this.MeasureLevel1.Name = "MeasureLevel1";
-            this.MeasureLevel1.Size = new System.Drawing.Size(156, 45);
-            this.MeasureLevel1.TabIndex = 35;
-            this.MeasureLevel1.TextChanged += new System.EventHandler(this.MeasureLevel1_TextChanged);
-            // 
-            // MeasureLevel2
-            // 
-            this.MeasureLevel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.MeasureLevel2.Location = new System.Drawing.Point(705, 83);
-            this.MeasureLevel2.Multiline = true;
-            this.MeasureLevel2.Name = "MeasureLevel2";
-            this.MeasureLevel2.Size = new System.Drawing.Size(156, 50);
-            this.MeasureLevel2.TabIndex = 38;
-            this.MeasureLevel2.TextChanged += new System.EventHandler(this.MeasureLevel2_TextChanged);
-            // 
-            // MeasureLevel3
-            // 
-            this.MeasureLevel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.MeasureLevel3.Location = new System.Drawing.Point(705, 152);
-            this.MeasureLevel3.Multiline = true;
-            this.MeasureLevel3.Name = "MeasureLevel3";
-            this.MeasureLevel3.Size = new System.Drawing.Size(156, 45);
-            this.MeasureLevel3.TabIndex = 39;
-            this.MeasureLevel3.TextChanged += new System.EventHandler(this.MeasureLevel3_TextChanged);
-            // 
-            // MeasureLevel4
-            // 
-            this.MeasureLevel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.MeasureLevel4.Location = new System.Drawing.Point(705, 219);
-            this.MeasureLevel4.Multiline = true;
-            this.MeasureLevel4.Name = "MeasureLevel4";
-            this.MeasureLevel4.Size = new System.Drawing.Size(156, 46);
-            this.MeasureLevel4.TabIndex = 37;
-            this.MeasureLevel4.TextChanged += new System.EventHandler(this.MeasureLevel4_TextChanged);
             // 
             // label6
             // 
@@ -539,6 +499,71 @@
             // 
             this.rubricTableAdapter.ClearBeforeFill = true;
             // 
+            // MeasurementcomboBox1
+            // 
+            this.MeasurementcomboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.MeasurementcomboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.rubricBindingSource, "Details", true));
+            this.MeasurementcomboBox1.FormattingEnabled = true;
+            this.MeasurementcomboBox1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.MeasurementcomboBox1.Location = new System.Drawing.Point(705, 25);
+            this.MeasurementcomboBox1.Name = "MeasurementcomboBox1";
+            this.MeasurementcomboBox1.Size = new System.Drawing.Size(156, 21);
+            this.MeasurementcomboBox1.TabIndex = 41;
+            this.MeasurementcomboBox1.Tag = "";
+            this.MeasurementcomboBox1.SelectedIndexChanged += new System.EventHandler(this.MeasurementcomboBox1_SelectedIndexChanged);
+            // 
+            // MeasurementcomboBox2
+            // 
+            this.MeasurementcomboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.MeasurementcomboBox2.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.rubricBindingSource, "Details", true));
+            this.MeasurementcomboBox2.FormattingEnabled = true;
+            this.MeasurementcomboBox2.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.MeasurementcomboBox2.Location = new System.Drawing.Point(705, 97);
+            this.MeasurementcomboBox2.Name = "MeasurementcomboBox2";
+            this.MeasurementcomboBox2.Size = new System.Drawing.Size(156, 21);
+            this.MeasurementcomboBox2.TabIndex = 42;
+            this.MeasurementcomboBox2.Tag = "";
+            // 
+            // MeasurementcomboBox3
+            // 
+            this.MeasurementcomboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.MeasurementcomboBox3.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.rubricBindingSource, "Details", true));
+            this.MeasurementcomboBox3.FormattingEnabled = true;
+            this.MeasurementcomboBox3.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.MeasurementcomboBox3.Location = new System.Drawing.Point(705, 164);
+            this.MeasurementcomboBox3.Name = "MeasurementcomboBox3";
+            this.MeasurementcomboBox3.Size = new System.Drawing.Size(156, 21);
+            this.MeasurementcomboBox3.TabIndex = 43;
+            this.MeasurementcomboBox3.Tag = "";
+            // 
+            // MeasurementcomboBox4
+            // 
+            this.MeasurementcomboBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.MeasurementcomboBox4.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.rubricBindingSource, "Details", true));
+            this.MeasurementcomboBox4.FormattingEnabled = true;
+            this.MeasurementcomboBox4.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.MeasurementcomboBox4.Location = new System.Drawing.Point(705, 232);
+            this.MeasurementcomboBox4.Name = "MeasurementcomboBox4";
+            this.MeasurementcomboBox4.Size = new System.Drawing.Size(156, 21);
+            this.MeasurementcomboBox4.TabIndex = 44;
+            this.MeasurementcomboBox4.Tag = "";
+            // 
             // RubricLevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -608,10 +633,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox MeasureLevel1;
-        private System.Windows.Forms.TextBox MeasureLevel2;
-        private System.Windows.Forms.TextBox MeasureLevel3;
-        private System.Windows.Forms.TextBox MeasureLevel4;
         private System.Windows.Forms.TextBox Datails4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
@@ -619,5 +640,9 @@
         private System.Windows.Forms.BindingSource rubricBindingSource;
         private ProjectBDataSet2TableAdapters.RubricTableAdapter rubricTableAdapter;
         private System.Windows.Forms.LinkLabel Home;
+        private System.Windows.Forms.ComboBox MeasurementcomboBox1;
+        private System.Windows.Forms.ComboBox MeasurementcomboBox2;
+        private System.Windows.Forms.ComboBox MeasurementcomboBox3;
+        private System.Windows.Forms.ComboBox MeasurementcomboBox4;
     }
 }

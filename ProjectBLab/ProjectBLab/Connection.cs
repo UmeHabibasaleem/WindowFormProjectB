@@ -32,19 +32,10 @@ namespace ProjectBLab
 
                 int i = command.ExecuteNonQuery();
 
-                if (i > 0)
-                {
-                    MessageBox.Show("Data Inserted Successfully");
-                }
-                else
-                {
-                    MessageBox.Show("Data could not add. Please try again!");
-                }
             }
             catch (Exception ex)
             {
-               // throw ex;
-                MessageBox.Show("dublicate data can,t insert in it");
+                MessageBox.Show("Data addition fail,because of dublicate data");
                 return;
             }
             finally
@@ -66,7 +57,6 @@ namespace ProjectBLab
                 conn.Open();
                 SqlDataReader reader;
                 reader = command.ExecuteReader();
-              //  MessageBox.Show("Data Deleted");
             }
             catch (Exception ex)
             {
@@ -774,6 +764,33 @@ namespace ProjectBLab
             {
                 conn.Close();
             }
+        }
+        public int IsExist(string query)
+        {
+            int count = 0;
+            try
+            {
+                SqlCommand command = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataReader reader;
+                reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        count = Convert.ToInt32(reader[0]);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return count;
         }
     }
 }   

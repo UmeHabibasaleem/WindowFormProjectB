@@ -62,13 +62,13 @@
             this.ADD = new System.Windows.Forms.Button();
             this.Save = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.Home = new System.Windows.Forms.LinkLabel();
             this.projectBDataSet3 = new ProjectBLab.ProjectBDataSet3();
             this.assessmentComponentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.assessmentComponentTableAdapter = new ProjectBLab.ProjectBDataSet3TableAdapters.AssessmentComponentTableAdapter();
             this.studentClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.assessmentTableAdapter = new ProjectBLab.ProjectBDataSet4TableAdapters.AssessmentTableAdapter();
             this.rubricTableAdapter = new ProjectBLab.ProjectBDataSet5TableAdapters.RubricTableAdapter();
-            this.Home = new System.Windows.Forms.LinkLabel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AssessmentRecord)).BeginInit();
@@ -444,6 +444,22 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(778, 46);
             this.tableLayoutPanel3.TabIndex = 22;
             // 
+            // Home
+            // 
+            this.Home.ActiveLinkColor = System.Drawing.Color.PaleTurquoise;
+            this.Home.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.Home.AutoSize = true;
+            this.Home.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Home.LinkColor = System.Drawing.Color.MidnightBlue;
+            this.Home.Location = new System.Drawing.Point(519, 8);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(123, 29);
+            this.Home.TabIndex = 23;
+            this.Home.TabStop = true;
+            this.Home.Text = "Home";
+            this.Home.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Home_LinkClicked);
+            // 
             // projectBDataSet3
             // 
             this.projectBDataSet3.DataSetName = "ProjectBDataSet3";
@@ -469,22 +485,6 @@
             // rubricTableAdapter
             // 
             this.rubricTableAdapter.ClearBeforeFill = true;
-            // 
-            // Home
-            // 
-            this.Home.ActiveLinkColor = System.Drawing.Color.PaleTurquoise;
-            this.Home.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Home.AutoSize = true;
-            this.Home.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Home.LinkColor = System.Drawing.Color.MidnightBlue;
-            this.Home.Location = new System.Drawing.Point(519, 8);
-            this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(123, 29);
-            this.Home.TabIndex = 23;
-            this.Home.TabStop = true;
-            this.Home.Text = "Home";
-            this.Home.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Home_LinkClicked);
             // 
             // tableLayoutPanel4
             // 

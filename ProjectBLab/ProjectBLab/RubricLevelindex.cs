@@ -40,12 +40,9 @@ namespace ProjectBLab
                 if (result.Equals(DialogResult.OK))
                 {
                     Rub.Delete(id);
+                    MessageBox.Show("Data has been Deleted successfully");
                     RubLevelRecord.DataSource = null;
                     RubricLevelindex_Load(sender, e);
-                    if (Add.Visible == false)
-                    {
-                        Add.Visible = true;
-                    }
                 }
                 else
                 {
@@ -54,33 +51,24 @@ namespace ProjectBLab
             }
            if (RubLevelRecord.Columns[e.ColumnIndex].Name == "Edit")
             {
-              
                 Details.Text = r.Cells[1].Value.ToString();
-                Measurement.Text = r.Cells[2].Value.ToString();
+                MeasurementcomboBox1.Text = r.Cells[2].Value.ToString();
                 globalindex = id;
-                if (Add.Visible)
-                {
-                    Add.Visible = false;
-                }
-
             } 
         }
 
         private void Save_Click(object sender, EventArgs e)
         {
             RubricLevelClass RLC = new RubricLevelClass();
-            RLC.Edit(globalindex, Details.Text, Measurement.Text);
+            RLC.Edit(globalindex, Details.Text.Trim(), MeasurementcomboBox1.Text);
             RubLevelRecord.DataSource = null;
             RubricLevelindex_Load(sender, e);
             Details.Text = " ";
-            Measurement.Text = " ";
-            Add.Visible = true;
+            MeasurementcomboBox1.Text = " ";
+            
         }
 
-        private void Add_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
@@ -92,6 +80,11 @@ namespace ProjectBLab
             Home H = new Home();
             this.Hide();
             H.Show();
+        }
+
+        private void MeasurementcomboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

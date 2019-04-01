@@ -85,26 +85,36 @@ namespace ProjectBLab
 
         private void ADD_Click(object sender, EventArgs e)
         {
-            AssessmentComClass ACC = new AssessmentComClass();
+            try
+            {
+                AssessmentComClass ACC = new AssessmentComClass();
 
-            if (ASSName.Text == "" || TotalMarks.Text == "")
-            {
-                MessageBox.Show("please fillall the fields first");
+                if (ASSName.Text == "" || TotalMarks.Text == "")
+                {
+                    MessageBox.Show("please fillall the fields first");
+                }
+                else
+                {
+                    string Rubric = RubricSelection.Text;
+                    string assessment = AssessmentSelection.Text;
+                    ACC.ASSCOM_ADD(ASSName.Text, Rubric, assessment, Convert.ToInt32(TotalMarks.Text), DateCreated.Value, DateUpdated.Value);
+                    MessageBox.Show("Data has been added successfully");
+                    RubricSelection.DataSource = null;
+                    ASSName.Text = "";
+                    RubricSelection.Text = "";
+                    AssessmentSelection.Text = "";
+                    TotalMarks.Text = "";
+                    DateCreated.ResetText();
+                    DateUpdated.ResetText();
+                    My_Own_Load();
+                }
             }
-            else
+            catch(Exception ex)
             {
-                string Rubric = RubricSelection.Text;
-                string assessment = AssessmentSelection.Text;
-                ACC.ASSCOM_ADD(ASSName.Text ,Rubric,assessment,Convert.ToInt32(TotalMarks.Text),DateCreated.Value,DateUpdated.Value);
-                RubricSelection.DataSource = null;
-                ASSName.Text = "";
-                RubricSelection.Text = "";
-                AssessmentSelection.Text = "";
-                TotalMarks.Text = "";
-                DateCreated.ResetText();
-                DateUpdated.ResetText();
-                My_Own_Load();
+                MessageBox.Show("Data insertion Fail,Try again with valid input");
+                return; 
             }
+            
         }
 
         private void AssessmentRecord_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -121,6 +131,7 @@ namespace ProjectBLab
                 if (result.Equals(DialogResult.OK))
                 {
                     ACC.Delete(id);
+                    MessageBox.Show("Data Has been deleted successfully");
                     AssessmentRecord.DataSource = null;
                     My_Own_Load();
                     if (ADD.Visible == false)
@@ -158,19 +169,27 @@ namespace ProjectBLab
 
         private void Save_Click(object sender, EventArgs e)
         {
-            string Rubric = RubricSelection.Text;
-            string assessment = AssessmentSelection.Text;
-            AssessmentComClass Rub = new AssessmentComClass();
-            Rub.Edit(globalindex,ASSName.Text , Rubric, assessment, Convert.ToInt32(TotalMarks.Text), DateCreated.Value, DateUpdated.Value);
-            AssessmentRecord.DataSource = null;
-            ASSName.Text = "";
-            RubricSelection.Text = "";
-            AssessmentSelection.Text = "";
-            TotalMarks.Text = "";
-            DateCreated.ResetText();
-            DateUpdated.ResetText();
-            My_Own_Load();
-            ADD.Visible = true;
+            try
+            {
+                string Rubric = RubricSelection.Text;
+                string assessment = AssessmentSelection.Text;
+                AssessmentComClass Rub = new AssessmentComClass();
+                Rub.Edit(globalindex, ASSName.Text, Rubric, assessment, Convert.ToInt32(TotalMarks.Text), DateCreated.Value, DateUpdated.Value);
+                AssessmentRecord.DataSource = null;
+                ASSName.Text = "";
+                RubricSelection.Text = "";
+                AssessmentSelection.Text = "";
+                TotalMarks.Text = "";
+                DateCreated.ResetText();
+                DateUpdated.ResetText();
+                My_Own_Load();
+                ADD.Visible = true;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Data can,t be update,please enter valid data");
+            }
+           
         }
 
         private void Home_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
